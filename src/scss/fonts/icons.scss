@@ -1,0 +1,105 @@
+%ic {
+    font-family: "icons";
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="_icon-"] {
+    &:before {
+        @extend %ic;
+        display: block;
+    }
+}
+
+
+._icon-arrow-right-litle:before {
+    content: "\e900";
+}
+
+._icon-big-arrow-right:before {
+    content: "\e901";
+}
+
+._icon-box:before {
+    content: "\e902";
+    color:#3966B3;
+}
+
+._icon-half-star:before {
+    content: "\e903";
+}
+
+._icon-linkedin:before {
+    content: "\e904";
+}
+
+._icon-not-ok:before {
+    content: "\e906";
+}
+
+._icon-ok:before {
+    content: "\e907";
+}
+
+._icon-phone:before {
+    content: "\e908";
+}
+
+._icon-planet:before {
+    content: "\e909";
+}
+
+._icon-send:before {
+    content: "\e90b";
+}
+
+._icon-shild-done:before {
+    content: "\e90c";
+}
+
+._icon-star:before {
+    content: "\e90d";
+}
+
+._icon-tviter:before {
+    content: "\e90e";
+}
+
+._icon-yutube:before {
+    content: "\e90f";
+}
+
+
+
+.rating-user {
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+  //width: 100px;
+//   border: 1px solid red;
+
+    .icon-users {
+        font-size: 0;
+        line-height: 0;
+        letter-spacing: 0.2em;
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        background-image: -webkit-linear-gradient(left, #F5CF3F, #F5CF3F 70%, #FCF8D9 70%, #FCF8D9 100%);
+
+        &:before {
+            content: "\e90d \e90d \e90d \e90d \e90d";
+            font-size: 40px;
+            line-height: 1;
+            font-family: "icons";
+        }
+    }
+}
+

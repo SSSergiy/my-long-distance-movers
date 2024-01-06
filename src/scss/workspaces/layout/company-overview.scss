@@ -1,0 +1,95 @@
+.overview {
+
+    .questions__container{
+
+        display:flex;
+        justify-content: space-between;
+
+        .questions__item {
+            h2 {
+                font-family: "Manuale";
+                font-style: normal;
+                font-weight: 600;
+                line-height: 110%;
+                @include adaptiveValue("font-size", 50, 36);
+                @include adaptiveValue("margin-bottom", 30, 16);
+            }
+            h3 {
+                font-family: "Manuale";
+                font-style: normal;
+                font-weight: 600;
+                line-height: 110%;
+                @include adaptiveValue("font-size", 40, 30);
+                @include adaptiveValue("margin-bottom", 20, 17);
+            }
+
+            p {
+                @include adaptiveValue("font-size", 18, 16);
+                @include adaptiveValue("margin-bottom", 56, 40);
+
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+
+                @media (360px <=width <=767px) {
+                    & {
+                        line-height: 150%;
+
+
+                    }
+                }
+            }
+        }
+    }
+
+    .questions {
+        width: 75%;
+
+        @media (360px <=width <=767px) {
+            & {
+                width: 100%;
+
+            }
+        }
+    }
+
+    .choises__saidbar-cards {
+        width: 19%;
+    }
+
+    ul {
+        li {
+            display: flex;
+            margin-bottom: 12px;
+
+            ._icon-ok {
+                width: 26px;
+                height: 26px;
+                background-color: #A1E8B9;
+                color: #00AC1B;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border-radius: 30%;
+                margin-right: 17px;
+                @media ( 360px <= width <=  767px ) {
+        & {
+            width: 21px;
+            height: 22px;
+        
+                 
+        }
+}
+            }
+
+            .choises__card-item-text {
+
+                font-style: normal;
+                line-height: normal;
+                width: 100%;
+                @include adaptiveValue("font-size", 18, 18);
+            }
+        }
+    }
+}
+

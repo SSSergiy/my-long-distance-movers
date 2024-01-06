@@ -1,0 +1,94 @@
+.tips-section {
+    @include adaptiveValue("margin-bottom", 55, 23);
+
+    .tips-section__title {
+        font-family: "Manuale";
+        font-style: normal;
+        font-weight: 600;
+        line-height: 110%;
+        @include adaptiveValue("font-size", 50, 36);
+        @include adaptiveValue("margin-bottom", 60, 40);
+
+        @media (360px <=width <=767px) {
+            & {
+                text-align: center;
+
+            }
+        }
+
+
+    }
+
+    .tips-section__description {
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        @include adaptiveValue("font-size", 18, 16);
+        @include adaptiveValue("margin-bottom", 60, 34);
+
+
+    }
+
+    .tips-section__container {
+        .tips-section__list {
+            counter-reset: section-counter;
+
+            .tips-section__item {
+                position: relative;
+                counter-increment: section-counter;
+                border-radius: 10px;
+                border: 1px solid #AADCB8;
+                @include adaptiveValue("padding", 30, 16);
+                @include adaptiveValue("padding-bottom", 28, 16);
+                @include adaptiveValue("padding-right", 34, 16);
+                @include adaptiveValue("margin-bottom", 27, 17);
+
+
+                &::before {
+                    content: counter(section-counter);
+                    position: absolute;
+                    display: flex;
+                    width: 26px;
+                    height: 26px;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 4px;
+                    background: #AADCB8;
+                    color: #00193F;
+                    font-family: "Manuale";
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 110%;
+
+                }
+
+                h3 {
+                    font-family: "Manuale";
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 600;
+                    line-height: 110%;
+                    margin-bottom: 16px;
+                    padding-left: 40px;
+                }
+
+                p {
+                    @include adaptiveValue("font-size", 16, 14);
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                    @media (360px <=width <=767px) {
+                        & {
+                            letter-spacing: 0.07px;
+
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}

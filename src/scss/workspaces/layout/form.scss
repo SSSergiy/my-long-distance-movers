@@ -1,0 +1,172 @@
+.form-calculator {
+    .step-block {
+        padding-left: 183px;
+        padding-right: 183px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        max-width: 1260px;
+        border-radius: 10px;
+        border: 1px solid #80C1FF;
+
+        background: #D9EFFF;
+
+        /* 1 */
+        box-shadow: 3px 3px 15px 0px #B8E5FF inset, -3px -3px 15px 0px #86C8FF inset;
+
+        .form-calculator__title {
+            font-family: "Manuale";
+            font-size: 40px;
+            font-style: normal;
+            font-weight: 600;
+            line-height: 110%;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+
+        }
+
+        .requested-text {
+            display: grid;
+            place-items: center;
+            font-size: 14px;
+            line-height: normal;
+            text-align:center;
+        }
+
+        .step-block__items {
+            h4 {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+            }
+
+            margin-bottom: 29px;
+        }
+
+        .btn-zipe-code {
+            margin-top:10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            width: 100%;
+            min-height: 70px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 20px;
+
+        }
+
+    }
+
+
+    .step-block-one {
+        padding-left: 183px;
+        padding-right: 183px;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        max-width: 1260px;
+        border-radius: 10px;
+        border: 1px solid #80C1FF;
+
+        background: #D9EFFF;
+
+        /* 1 */
+        box-shadow: 3px 3px 15px 0px #B8E5FF inset, -3px -3px 15px 0px #86C8FF inset;
+
+
+
+        .form-calculator__zipe-code {
+
+            display: flex;
+            flex-direction: column;
+
+            span:first-child {
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                margin-bottom: 10px
+            }
+
+            input::placeholder {
+                color: #828282;
+            }
+
+            input {
+                border-radius: 10px;
+                min-height: 70px;
+                padding: 20px;
+                margin-bottom: 29px;
+            }
+
+            .input-zip-error {
+
+                display: flex;
+                align-items: center;
+                font-size: 14px;
+                color: #E81C00;
+                margin-bottom: 10px;
+                display: none; // error
+
+                img {
+                    margin-right: 10px;
+                }
+
+            }
+
+            // .input-not-ok { // error
+            //     border: 1px solid #E81C00;
+            // }
+
+            // .input-ok { // good rezult
+            //     border: 1px solid #00AF12;
+            // }
+
+
+        }
+
+        .btn-zipe-code {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 100%;
+            width: 100%;
+            min-height: 70px;
+            text-transform: uppercase;
+            font-weight: 600;
+            margin-bottom: 20px;
+
+        }
+
+        // .btn-zipe-code-ok{ // good rezult
+        //     background: #FF7337;
+        // }
+
+
+    }
+}
+
+.step-block-three .select {
+    width: 100% !important;
+
+}
+
+.step-block-three {
+    h4 {
+        margin-bottom: 10px;
+    }
+
+    .select {
+        width: 100%;
+    }
+
+    .selects-block {
+        width: 100%;
+    }
+
+    .selects-block__item {
+        width: 100%;
+    }
+}

@@ -1,0 +1,177 @@
+.footer {
+    max-height: 789px;
+    min-height: 417px;
+    color: #FFF;
+    background-color: #0A0A3F;
+    padding-top: 40px;
+    @include adaptiveValue("padding-bottom", 40, 32);
+
+    .footer__container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @include adaptiveValue("gap", 40, 20);
+
+        .footer__info {
+            display: flex;
+            align-items: center;
+            @include adaptiveValue("gap", 64, 20);
+
+            @media (718px <=width <=1280px) {
+                & {
+                    justify-content: space-around;
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                }
+            }
+
+            @media (360px <=width <=718px) {
+                & {
+                    flex-wrap: wrap;
+                    align-items: center;
+
+                }
+            }
+        }
+
+        .footer__license {
+            color: #FFF;
+
+            text-align: center;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+        }
+
+        .footer__info-description {
+            max-width: 435px;
+
+            @media (360px <=width <=1280px) {
+                & {
+                    max-width: 100%;
+
+                }
+            }
+
+
+            p {
+
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                color: #FFE1C6;
+                @include adaptiveValue("font-size", 14, 12);
+
+                a {
+                    color: var(--color-footer-icons)
+                }
+            }
+        }
+
+        .footer__info-posts {
+
+            max-width: 365px;
+
+            h2 {
+
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include adaptiveValue("font-size", 20, 18);
+                @include adaptiveValue("margin-bottom", 22, 10);
+
+            }
+
+            li {
+                margin-bottom: 8px;
+                color: var(--color-footer-icons);
+                position: relative;
+                display: flex;
+                align-items: center;
+                font-size: 16px;
+
+                @media (360px <=width <=767px) {
+                    & {
+                        margin-bottom: 6px;
+
+
+
+                    }
+                }
+
+                &::before {
+                    position: absolute;
+                }
+
+            }
+
+            a {
+                padding-left: 30px;
+                color: #FFFFFF;
+                font-style: normal;
+                font-weight: 400;
+                line-height: normal;
+                @include adaptiveValue("font-size", 16, 14);
+            }
+
+        }
+
+        .footer__info-contacts {
+            max-width: 363px;
+
+            h2 {
+                color: #FFF;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                @include adaptiveValue("font-size", 20, 18);
+                @include adaptiveValue("margin-bottom", 22, 10);
+
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+
+                @include adaptiveValue("margin-bottom", 18, 12);
+                color: var(--color-footer-icons);
+                position: relative;
+
+                &::before {
+                    position: absolute;
+                }
+
+            }
+
+            a {
+                padding-left: 30px;
+                @include adaptiveValue("font-size", 16, 14);
+                color: #FFFFFF;
+
+            }
+        }
+
+        .footer__img-block {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            @include adaptiveValue("margin-bottom", 20, 30);
+
+            .footer__img-logo {
+
+                @include adaptiveValue("width", 47, 43);
+                @include adaptiveValue("height", 43, 40);
+            }
+
+            .footer__img-description {
+                @include adaptiveValue("width", 296, 272);
+                @include adaptiveValue("height", 26, 24);
+            }
+        }
+    }
+}

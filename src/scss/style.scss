@@ -1,0 +1,14 @@
+@use "sass:math";
+@import "blanks/variables";
+@import "blanks/base/mixins";
+@import "fonts/fonts";
+@import "fonts/icons";
+@import "blanks/base/null";
+@import "blanks/base/spollers";
+@import "blanks/global";
+@import "workspaces/layout/components";
+
+@import "workspaces/pages/home-page";
+@import "workspaces/pages/company-page";
+
+
