@@ -3,13 +3,10 @@
 
 <Head srcpars="./src/html/layout/Head.html" />
 
-
-
 <body>
     <div class="wrapper ">
         <Header srcpars="src/html/layout/Header.html" />
         <Distance srcpars="src/html/layout/Distance.html" />
-
         <section class="choises">
             <div class="choises__container">
                 <div class="choises__cards">
@@ -29,21 +26,17 @@
                                     <span class="choises__card-item-icon _icon-ok"></span>
                                     <span class="choises__card-item-text">Most Advanced Technology</span>
                                 </li>
-
                                 <li class="choises__card-info-item">
                                     <span class="choises__card-item-icon _icon-ok"></span>
                                     <span class="choises__card-item-text">Quick and Consistent Supply Chain</span>
                                 </li>
                             </ul>
                         </div>
-
                         <div class="choises__card-nav-block first-nav">
-
                             <div class="rating-block">
                                 <span class="rating-block__number first-nav-rating">9.9</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">outstanding</span>
-
                                     <span class="rating-block__stars" data-da=".first-nav-rating,871,2">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
@@ -55,10 +48,7 @@
                             <Get srcpars="src/html/components/Get.html" />
                         </div>
                     </article>
-
-
                     <article class="choises__card mayzln">
-
                         <div class="choises__card-logo-container">
                             <img src="./src/img/mayzlin.png" alt="img">
                         </div>
@@ -80,30 +70,22 @@
                             </ul>
                         </div>
                         <div class="choises__card-nav-block second-nav">
-
                             <div class="rating-block">
                                 <span class="rating-block__number second-nav-rating">9.8</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">excellent</span>
-
                                     <span class="rating-block__stars" data-da=".second-nav-rating,871,2">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
                                         </div>
-
-
                                     </span>
                                 </span>
                             </div>
-
                             <Call srcpars="src/html/components/Call.html" data-attribute-1="tel:904-604-7091" />
                             <Get srcpars="src/html/components/Get.html" />
                         </div>
                     </article>
-
-
                     <article class="choises__card van-lines">
-
                         <a href="https://www.mylongdistancemovers.com/vanlinesinc/"
                             class="choises__card-logo-container">
                             <img src="./src/img/van-lines.png" alt="img">
@@ -125,32 +107,24 @@
                                 </li>
                             </ul>
                         </div>
-
                         <div class="choises__card-nav-block third-nav">
                             <div class="rating-block">
                                 <span class="rating-block__number third-nav-rating">9.6</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">very good</span>
-
                                     <span class="rating-block__stars" data-da=".third-nav-rating,871,2">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
                                         </div>
-
                                     </span>
                                 </span>
                             </div>
-
                             <Call srcpars="src/html/components/Call.html" data-attribute-1="tel:833-799-1213" />
                             <Get srcpars="src/html/components/Get.html" />
                         </div>
                     </article>
-
                 </div>
-
-
                 <div class="choises__saidbar-cards">
-
                     <article class="choises__saidbar-card-recomended">
                         <h3>Reccomended reads</h3>
                         <div class="choises__recomended-list">
@@ -168,11 +142,8 @@
                             </article>
                         </div>
                     </article>
-
-
                     <article class="choises__saidbar-card-editorial">
                         <h3>Editorial reviews</h3>
-
                         <div class="choises__editorial-list">
                             <article class="choises__editorial-item">
                                 <div class="choises__editorial-img-block">
@@ -203,9 +174,6 @@
                             </article>
                         </div>
                     </article>
-
-
-
                     <article class="choises__saidbar-card-forvard">
                         <h3 hidden>forward</h3>
                         <div class="choises__forvard-img-container">
@@ -225,86 +193,81 @@
             </div>
         </section>
         <DecorLine srcpars="src/html/components/DecorLine.html" />
-
         <AboutUs srcpars="src/html/layout/AboutUs.html" />
-
         <section class="section-form">
-
             <h2 hidden>form</h2>
             <div class="section-form__container">
+                <form id="form-step" class="form-calculator">
 
 
-                <form class="form-calculator">
-
-                    <div id="step-one" class="step-block-one step-block" hidden>
+                    <div id="step-one" class="step-block-one step-block">
                         <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-
                         <label class="form-calculator__zipe-code" for="zipe-code">
                             <span>Where Are Your Moving From?</span>
-
                             <span class="input-zip-error">
                                 <img src="./src/img/error-zip.svg" alt="img">
                                 <span>Zip Code
                                     should contain 5
                                     digits</span>
                             </span>
-
-                            <input class="input-not-ok input-ok" type="text" id="zipe-code" name="name"
-                                placeholder="Moving From Zip Code" required>
+                            <input class=" " type="text" id="zipe-code" name="name" placeholder="Moving From Zip Code"
+                                required>
                         </label>
 
-                        <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                        <div id="btn-step-one" class="btn-zipe-code call-component-btn disable-click">
                             <span>estimate my moving</span>
                             <span class="_icon-big-arrow-right"></span>
                         </div>
-
                         <span class="requested-text">1, 765 people requested an estimate!</span>
-
                     </div>
+
+
 
                     <div id="step-two" class="step-block-two step-block" hidden>
                         <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-
-
                         <div class="step-block__items">
                             <h4>Where Are Your Moving To?</h4>
-
                             <div class="selects-block">
                                 <select name="form[]" data-class-modif="form">
                                     <option value="1" selected>Select State1</option>
                                     <option value="2">Absarokee, MT</option>
                                     <option value="3">Acton, MT</option>
                                     <option value="4">Ashland, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
-                                    <option value="4">Ballantine, MT</option>
+                                    <option value="5">Ballantine, MT</option>
+                                    <option value="6">Ballantine, MT</option>
+                                    <option value="7">Ballantine, MT</option>
+                                    <option value="8">Ballantine, MT</option>
+                                    <option value="9">Ballantine, MT</option>
+                                    <option value="10">Ballantine, MT</option>
+                                    <option value="11">Ballantine, MT</option>
+                                    <option value="12">Ballantine, MT</option>
+                                    <option value="13">Ballantine, MT</option>
+                                    <option value="14">Ballantine, MT</option>
                                 </select>
                                 <select name="form[]" data-class-modif="form">
                                     <option value="1" selected>Select City</option>
-                                    <option value="2">Morocco</option>
-                                    <option value="3">Morocco</option>
-                                    <option value="3">Morocco</option>
-                                    <option value="3">Morocco</option>
-                                    <option value="3">Morocco</option>
-                                    <option value="4">Morocco</option>
+                                    <option value="2">Absarokee, MT</option>
+                                    <option value="3">Acton, MT</option>
+                                    <option value="4">Ashland, MT</option>
+                                    <option value="5">Ballantine, MT</option>
+                                    <option value="6">Ballantine, MT</option>
+                                    <option value="7">Ballantine, MT</option>
+                                    <option value="8">Ballantine, MT</option>
+                                    <option value="9">Ballantine, MT</option>
+                                    <option value="10">Ballantine, MT</option>
+                                    <option value="11">Ballantine, MT</option>
+                                    <option value="12">Ballantine, MT</option>
+                                    <option value="13">Ballantine, MT</option>
+                                    <option value="14">Ballantine, MT</option>
                                 </select>
                             </div>
                         </div>
-                        <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                        <div id="btn-step-two" class="btn-zipe-code call-component-btn  disable-click">
+
                             <span>estimate my moving</span>
                             <span class="_icon-big-arrow-right"></span>
                         </div>
-
-
                         <span class="requested-text">1, 765 people requested an estimate!</span>
-
                     </div>
 
                     <div id="step-three" class="step-block-three step-block" hidden>
@@ -313,24 +276,28 @@
                             <div class="selects-block">
                                 <div class="selects-block__item">
                                     <h4>When is Your Move?</h4>
-                                    <input readonly type="text" class="data-datepicker select__title "
+                                    <input id="picer" readonly type="text" class="data-datepicker select__title "
                                         placeholder="select a date" data-datepicker>
                                 </div>
                                 <div class="selects-block__item">
                                     <h4>How Large is Your Move?</h4>
                                     <select name="form[]" data-class-modif="form">
                                         <option value="1" selected>Select Home Size</option>
-                                        <option value="2">≥ 6 Bedrooms Apartments</option>
-                                        <option value="3">≥ 6 Bedrooms Apartments</option>
-                                        <option value="3">≥ 6 Bedrooms Apartments</option>
-                                        <option value="3">≥ 6 Bedrooms Apartments</option>
-                                        <option value="3">≥ 6 Bedrooms Apartments</option>
-                                        <option value="4">≥ 6 Bedrooms Apartments</option>
+                                        <option value="2">1 Bedroom Apartment</option>
+                                        <option value="3">1 Bedroom House</option>
+                                        <option value="4">2 Bedrooms Apartment</option>
+                                        <option value="5">2 Bedrooms House</option>
+                                        <option value="6">3 Bedrooms Apartment</option>
+                                        <option value="7">3 Bedrooms House</option>
+                                        <option value="8">4 Bedrooms Apartment</option>
+                                        <option value="9">4 Bedrooms House</option>
+                                        <option value="19">4 Bedrooms +</option>
                                     </select>
                                 </div>
                             </div>
                         </div>
-                        <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                        <div id="btn-step-three"
+                            class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click ">
                             <span>estimate my moving</span>
                             <span class="_icon-big-arrow-right"></span>
                         </div>
@@ -346,11 +313,11 @@
                         </div>
                     </div>
 
-                    <div id="step-fifth">
+
+                    <div id="step-fifth" hidden>
                         <div class="step-block-fifth step-block">
                             <h3 class="form-calculator__title">Enter your information</h3>
                             <h4>Almost done! Enter your information to view your quote.</h4>
-
                             <label class="form-calculator__zipe-code" for="name-code">
                                 <span class="input-zip-error name-code-error" hidden>
                                     <img src="./src/img/error-zip.svg" alt="img">
@@ -360,8 +327,6 @@
                                 <input class="input-not-ok " type="text" id="name-code" name="name"
                                     placeholder="Enter your Name" required>
                             </label>
-
-
                             <label class="form-calculator__zipe-code" for="phone-code">
                                 <span class="input-zip-error phone-code-error" hidden>
                                     <img src="./src/img/error-zip.svg" alt="img">
@@ -371,19 +336,17 @@
                                 <input class="input-not-ok " type="text" id="phone-code" name="name"
                                     placeholder="Enter your Mobile" required>
                             </label>
-
                             <label class="form-calculator__zipe-code" for="mail-code">
                                 <span class="input-zip-error mail-code-error" hidden>
                                     <img src="./src/img/error-zip.svg" alt="img">
                                     <span>Email Code
                                         is wrong</span>
                                 </span>
-
                                 <input class="input-not-ok " type="text" id="mail-code" name="name"
                                     placeholder="Enter your Email" required>
                             </label>
-
-                            <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                            <div id="btn-step-fifth"
+                                class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click">
                                 <span class="btn-next">NEXT</span>
                                 <span class="btn-ok" hidden>ESTIMATE MY MOVING</span>
                                 <span class="_icon-big-arrow-right"></span>
@@ -394,30 +357,40 @@
                         </div>
                     </div>
 
+                    <div id="step-sixfh" hidden>
+                        <div class="step-block-sixfh step-block">
+                            <h3 class="form-calculator__title">Your Quotes are waiting for you!</h3>
+                            <p>My Long Distance Movers brings the movers directly to you! We’ll find the top moving
+                                companies for your needs and have
+                                them call you right away. Search no more. Just sit back and relax!</p>
 
+
+                            <span class="form__price">$1450 - $1850</span>
+                            <p>This is your estimated moving cost. Professional movers will contact you within business
+                                day.</p>
+                            <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                                <span class="btn-next">THANK YOU</span>
+
+                                <span class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="requested-text">Your information is safe with us. By using this service, you
+                                agree to receive email communications solely regarding your
+                                relocation process</span>
+                        </div>
+                    </div>
                 </form>
-
             </div>
-
         </section>
-
-
-
-
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <MovingTips srcpars="src/html/layout//MovingTips.html" />
-
         <section class="top-choice">
             <div class="top-choice__container">
-
                 <h2 class="top-choice__title">Our Tope Choice</h2>
-
                 <article class="choises__card midland">
                     <span class="mark-choice"><span>top choice</span></span>
                     <div class="choises__card-logo-container">
                         <img src="./src/img/midland.png" alt="img">
                     </div>
-
                     <div class="choises__card-info-block" data-da=".first-navnav,1000,1">
                         <h2 class="choises__card-info-block-title">Midland Van Lines</h2>
                         <ul class="choises__card-info-list">
@@ -435,19 +408,15 @@
                             </li>
                         </ul>
                     </div>
-
                     <div class="choises__card-nav-block first-navnav">
-
                         <div class="rating-block">
                             <span class="rating-block__number first-nav-rating-">9.9</span>
                             <span class="rating-block__value">
                                 <span class="rating-block__label">outstanding</span>
-
                                 <span class="rating-block__stars" data-da=".first-nav-rating-,871,2">
                                     <div class="rating-user">
                                         <span class="icon-users"></span>
                                     </div>
-
                                 </span>
                             </span>
                         </div>
@@ -455,44 +424,14 @@
                         <Get srcpars="src/html/components/Get.html" />
                     </div>
                 </article>
-
-
-
             </div>
         </section>
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <QuestionsSection srcpars="src/html/layout/QuestionsSection.html" />
-
-
-
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <Spoller srcpars="src/html/components/Spoller.html" />
         <Footer srcpars="src/html/layout/Footer.html" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
     <script type="module" src="./src/js/main.js"></script>
 </body>
 

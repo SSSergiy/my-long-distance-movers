@@ -1,5 +1,5 @@
 //<INPUT>
-// Сніппет (HTML): inp
+// snipet (HTML): inp
 input[type="text"],
 input[type="email"],
 input[type="tel"],
@@ -8,13 +8,34 @@ textarea {
     -moz-appearance: none;
     appearance: none;
 }
+// input:focus {
+//     border: 1px solid #00AF12 !important;
+//     .input-ok &{
+//         border: 1px solid #00AF12 !important;
+//         border-radius: 10px;
+//     }
 
+// }
 .input {
     border-radius: 0 !important;
     width: 100%;
     display: block;
     padding: 0px 20px;
     border: 1px solid #eee;
+    // &:active{
+    //     .input-ok &{
+    //         border: 1px solid #00AF12 !important;
+    //         border-radius: 10px;
+    //     }
+    // }
+    // &:focus{
+    //     border: 1px solid #00AF12 !important;
+
+    //     .input-ok &{
+    //         border: 1px solid #00AF12 !important;
+    //         border-radius: 10px;
+    //     }
+    // }
 
     &._form-focus {}
 

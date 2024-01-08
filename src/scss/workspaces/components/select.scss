@@ -11,12 +11,10 @@
         width: 50%;
         border: 1px solid rgba(0, 0, 0, 0.0);
 
-        // .select__body
         &__body {
             position: relative;
         }
 
-        // .select__title
         &__title {
             color: #828282;
             font-family: Poppins;
@@ -25,16 +23,13 @@
             font-weight: 400;
             line-height: 130%;
             text-align: left;
-
             background-color: #fff;
             cursor: pointer;
             width: 100%;
             border-radius: 10px;
             min-height: 70px;
-
         }
 
-        // .select__value
         &__value {
             display: flex;
             min-width: 0;
@@ -48,7 +43,6 @@
             }
 
             &::after {
-
                 content: url("./src/img/arrow-top.svg");
                 align-self: stretch;
                 flex: 0 0 10px;
@@ -56,8 +50,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-
-
 
                 ._select-open & {
                     transform: rotate(-180deg) !important;
@@ -72,8 +64,6 @@
             }
         }
 
-
-        // .select__content
         &__content {
             flex: 1 1 auto;
             overflow: hidden;
@@ -81,7 +71,6 @@
             white-space: nowrap;
         }
 
-        // .select__text
         &__text {
             flex: 1 1 auto;
             overflow: hidden;
@@ -95,7 +84,6 @@
             height: 100%;
         }
 
-        // .select__options
         &__options {
             color: #000;
             position: absolute;
@@ -105,14 +93,17 @@
             left: 0;
             background-color: #fff;
             border-top: 0;
-
             border-top: 0;
             padding: 10px 0px 5px 0px;
 
+            @media (360px <=width <=767px) {
+                & {
+                    top: calc(100% - toRem(-1));
+                }
+            }
 
         }
 
-        // .select__scroll
         &__scroll::-webkit-scrollbar {
             width: 12px;
         }
@@ -129,18 +120,9 @@
         &__scroll {
             overflow-y: auto;
             overflow-x: hidden;
-            // max height
             max-height: toRem(156);
-
-            // style shablones
-            .simplebar-scrollbar {
-                &::before {
-                    // opacity: 1;
-                }
-            }
         }
 
-        // .select__option
         &__option {
             width: 100%;
             text-align: left;
@@ -160,15 +142,10 @@
             }
         }
 
-        // construction add data
         &__row {
             display: inline-flex;
             align-items: center;
         }
-
-        &__asset {}
-
-        &__text {}
 
         &--show-top {
             .select__options {
@@ -180,23 +157,9 @@
                 padding: 5px 0px 10px 0px;
             }
         }
-
-        // state select
-        &._select-open {}
-
-        &._select-disabled {}
-
-        &._select-active {}
-
-        &._select-focus {}
-
-        &._select-multiple {}
-
-        &._select-checkbox {}
     }
 }
 
-// tag
 ._select-tag {
     cursor: pointer;
 }
@@ -246,10 +209,9 @@
         place-items: center;
         color: #0285FF;
         margin-bottom: 20px;
-
-        font-size: 22px;
-
         font-weight: 400;
+        @include adaptiveValue("font-size", 22, 16);
+        text-align: center;
 
     }
 
@@ -261,24 +223,18 @@
         margin-bottom: 12px;
 
     }
-    input::placeholder{
-    color: #828282;
-    font-family: 'Poppins';
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 130%;
-}
+
+    input::placeholder {
+        color: #828282;
+        font-family: 'Poppins';
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 130%;
+    }
 
     .requested-text {
         color: #828282;
-
         text-align: center;
-
-        font-size: 18px !important;
     }
-
-
 }
-
-.input-ok {}

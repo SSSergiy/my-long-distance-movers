@@ -14,13 +14,13 @@
             display: flex;
             gap: 24px;
             flex-wrap: wrap;
-            margin-bottom: 533px;
+            margin-bottom: 80px;
 
             @media (360px <=width <=767px) {
                 & {
                     gap: 30px;
                     flex-wrap: wrap;
-                    margin-bottom: 455px;
+                    margin-bottom: 60px;
 
                 }
             }
