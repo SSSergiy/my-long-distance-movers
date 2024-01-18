@@ -1,11 +1,11 @@
 .call-component-btn {
     border-radius: 10px;
     background: var(--color-btn-now);
-    box-shadow: 3px 3px 15px 0px #763200 inset,-3px -3px 15px 0px #763200 inset;
+    box-shadow: 3px 3px 15px 0px #763200 inset, -3px -3px 15px 0px #763200 inset;
     color: #FFFFFD;
     display: flex;
     max-width: 281px;
-    width:100%;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 16px;
@@ -18,16 +18,17 @@
     .call-link {
         padding: 23px 0;
         text-transform: uppercase;
-       
+
         font-style: normal;
         font-weight: 600;
-        @include adaptiveValue("font-size",24 ,20 );
-        @media ( 360px <= width <=  767px ) {
-        & {
-                 padding: 20px 0;	
-                 
+        @include adaptiveValue("font-size", 24, 20);
+
+        @media (360px <=width <=767px) {
+            & {
+                padding: 20px 0;
+
+            }
         }
-}
     }
 
 }

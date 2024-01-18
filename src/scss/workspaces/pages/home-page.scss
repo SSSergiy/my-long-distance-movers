@@ -453,6 +453,13 @@
         .choises__editorial-item {
             display: flex;
             gap: 34px;
+            @media ( 360px <= width <=  1101px ) {
+    & {
+        gap: 9px;
+
+
+    }
+}
 
             .choises__editorial-img-block {
                 display: flex;
@@ -495,6 +502,12 @@
         flex-direction: column;
         justify-content: center;
         text-align: center;
+        @media ( 360px <= width <=  1101px ) {
+        & {
+                padding: 12px;
+
+        }
+}
 
         img {
             width: 86px;

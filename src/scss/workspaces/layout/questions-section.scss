@@ -65,13 +65,16 @@
         width: 50%;
         border-radius: 10px;
         border: 1px solid #B4F5BA;
+        @media ( 360px <= width <=  1101px ) {
+    & {
+        width: 100%;
 
-        @media (360px <=width <=767px) {
-            & {
-                width: 100%;
 
-            }
-        }
+
+    }
+}
+
+     
 
         h5 {
             color: #FFF;

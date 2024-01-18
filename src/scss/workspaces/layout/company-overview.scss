@@ -55,6 +55,12 @@
 
     .choises__saidbar-cards {
         width: 19%;
+        @media ( 360px <= width <=  1101px ) {
+    & {
+        width: 22%;
+
+    }
+}
     }
 
     ul {
