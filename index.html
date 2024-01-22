@@ -374,11 +374,13 @@
                             <span class="step-two__text">Giving us a time frame helps us find the best moving solution
                                 for
                                 your needs</span>
-                            <span class="picker-wrapper">
-                                <input id="picer" readonly type="text" class="data-datepicker" placeholder="MM/DD/YYYY"
-                                    data-datepicker>
-                            </span>
-                            <div id="step-three-btn" class="step-two__btn">continue<span
+                            <div class="picer-icons-block">
+                                <input id="pickerID" placeholder="MM/DD/YYYY"
+                                    class="width-block flatpickr flatpickr-input" type="text" readonly="readonly">
+                            </div>
+
+
+                            <div id="step-three-btn" class="step-two__btn invalid-btn">continue<span
                                     class="_icon-big-arrow-right"></span>
                             </div>
                             <span class="step-two__description"><svg xmlns="http://www.w3.org/2000/svg" width="50"
@@ -408,7 +410,7 @@
                             <span class="sub-info">Preparing to send your estimate</span>
                             <div class="step-two__progres-block step-fourth__progres-block">
                                 <span
-                                    class="step-two__progres-percent step-fourth__progres-percent"><span>60%</span></span>
+                                    class="step-two__progres-percent step-fourth__progres-percent"><span>90%</span></span>
                                 <span class="step-two__quotes step-fourth__quotes"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                         fill="none">
@@ -459,7 +461,7 @@
                         </div>
                         <div id="step-fifth" class="step-two steps step-fifth" hidden>
                             <div class="step-two__progres-block step-fourth__progres-block step-fifes">
-                                <span class="step-two__quotes step-fourth__quotes "><svg
+                                <span class="step-two__quotes step-fourth__quotes step-fifthh"><svg
                                         xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
                                         fill="none">
                                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -525,7 +527,7 @@
                                 them call you right away. Search no more. Just sit back and relax!
                             </span>
                             <div type="button" data-close id="step-sixth-btn"
-                                class="popup__close step-two__btn valid-bt">
+                                class="popup__close step-two__btn valid-btn">
                                 thank you
                             </div>
                         </div>
@@ -760,7 +762,12 @@
     <div id="popup" aria-hidden="true" class="popup">
         <div class="popup__wrapper">
             <div class="popup__content">
-                <!-- <button data-close type="button" class="popup__close">Закрити</button> -->
+                <button data-close type="button" id="clozer" class="popup__close"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M9.15539 7.49185C9.37591 7.71224 9.49986 8.01121 9.49995 8.32299C9.50004 8.63477 9.37628 8.93382 9.15589 9.15435C8.93549 9.37488 8.63652 9.49882 8.32474 9.49891C8.01296 9.49901 7.71391 9.37524 7.49338 9.15485L5.00038 6.66085L2.50638 9.15485C2.39747 9.26436 2.26799 9.35126 2.12538 9.41057C1.98276 9.46987 1.82984 9.5004 1.67538 9.5004C1.52093 9.5004 1.36801 9.46987 1.22539 9.41057C1.08278 9.35126 0.953298 9.26436 0.844385 9.15485C0.623877 8.93431 0.5 8.63521 0.5 8.32335C0.5 8.01148 0.623877 7.71239 0.844385 7.49185L3.33738 4.99885L0.844385 2.50585C0.63714 2.28284 0.524455 1.98815 0.530029 1.68376C0.535603 1.37937 0.659003 1.08901 0.874274 0.873734C1.08954 0.658463 1.37991 0.535063 1.6843 0.529489C1.98869 0.523915 2.28338 0.6366 2.50638 0.843845L5.00038 3.33685L7.49338 0.843845C7.60251 0.734716 7.73207 0.648151 7.87465 0.589091C8.01723 0.530031 8.17005 0.499634 8.32439 0.499634C8.47872 0.499634 8.63154 0.530031 8.77412 0.589091C8.9167 0.648151 9.04626 0.734716 9.15539 0.843845C9.26451 0.952973 9.35108 1.08253 9.41014 1.22511C9.4692 1.36769 9.4996 1.52051 9.4996 1.67484C9.4996 1.82918 9.4692 1.982 9.41014 2.12458C9.35108 2.26716 9.26451 2.39672 9.15539 2.50585L6.66238 4.99885L9.15539 7.49185Z"
+                            fill="#41518B" />
+                    </svg></button>
                 <div class="popup__imgblock">
                     <div class="popup__text">
                     </div>

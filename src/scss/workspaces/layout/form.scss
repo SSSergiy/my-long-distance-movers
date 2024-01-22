@@ -1,13 +1,55 @@
 .section-form {
+    .picer-icons-block {
+        position: relative;
+
+        &::before {
+            position: absolute;
+            content: url('./src/img/data-picer.svg');
+            top: 50%;
+            left: 20px;
+            transform: translateY(-50%);
+
+
+        }
+
+        &::after {
+            position: absolute;
+
+            content: url('./src/img/2.svg');
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+
+
+        }
+    }
+
+    .width-block {
+        padding-left: 60px;
+        padding-right: 60px;
+        width: 100%;
+        border-radius: 10px;
+        border: 1px solid #C6CBDC;
+        color: #000B1B;
+
+        font-family: "Poppins";
+        font-size: 18px;
+
+        font-weight: 600;
+        line-height: 130%;
+        background: #FFF;
+    }
+
     .steps {
         border-radius: 10px;
         border: 1px solid #C6CBDC;
         background: #E4EBF3;
         box-shadow: 4px 4px 12px 2px rgba(156, 170, 218, 0.30);
-        padding-left: 185px;
-        padding-right: 185px;
-        padding-top: 40px;
-        padding-bottom: 40px;
+        @include adaptiveValue("padding-left", 185, 20);
+        @include adaptiveValue("padding-right", 185, 20);
+        @include adaptiveValue("padding-top", 40, 20);
+        @include adaptiveValue("padding-bottom", 40, 20);
+
     }
 
     .step-one {
@@ -15,27 +57,26 @@
         .form-calculator__title {
             text-align: center;
             display: block;
-            font-size: 40px;
             font-weight: 600;
             line-height: 110%;
             margin-bottom: 20px;
+            @include adaptiveValue("font-size", 40, 36);
         }
 
         .form-calculator__sub-title {
             display: block;
             font-family: "Poppins";
-            font-size: 24px;
             font-weight: 600;
-
+            @include adaptiveValue("font-size", 24, 22);
 
         }
 
         .form-calculator__description {
             display: block;
-            font-family: Poppins;
-            font-size: 16px;
+            font-family: "Poppins";
             font-weight: 300;
             margin-bottom: 16px;
+            @include adaptiveValue("font-size", 16, 14);
         }
 
         ul {
@@ -76,10 +117,9 @@
         padding-top: 20px;
         text-align: center;
         color: #000B1B;
-
         font-family: "Poppins";
-        font-size: 22px;
         font-weight: 500;
+        @include adaptiveValue("font-size", 22, 14);
     }
 
     .step-two__progres-block {
@@ -91,10 +131,16 @@
     }
 
     .step-two__progres-percent {
-        // height: 100%;
         display: inline-flex;
         align-items: center;
         width: 80%;
+
+        @media (360px <=width <=767px) {
+            & {
+                width: 100%;
+            }
+        }
+
 
 
 
@@ -103,10 +149,11 @@
             border-radius: 50px;
             background: var(--color-progress-bar);
             color: #FFF;
-            padding: 2px 10px;
+            padding: 7px 10px;
             font-family: "Poppins";
             font-size: 16px;
             font-weight: 600;
+
         }
 
         &::after {
@@ -152,8 +199,8 @@
         border-radius: 50px;
         background: #FFFAF2;
         margin-left: auto;
-        padding-top: 2px;
-        padding-bottom: 2px;
+        padding-top: 7px;
+        padding-bottom: 7px;
         padding-right: 10px;
         padding-left: 10px;
 
@@ -163,6 +210,11 @@
         font-size: 16px;
         font-weight: 400;
 
+        @media (360px <=width <=767px) {
+            & {
+                display: none;
+            }
+        }
 
     }
 
@@ -171,6 +223,13 @@
         font-family: "Poppins";
         font-size: 24px;
         font-weight: 600;
+        margin-bottom: 10px;
+
+        @media (360px <=width <=767px) {
+            & {
+                letter-spacing: -1px;
+            }
+        }
     }
 
     .step-two__text {
@@ -183,41 +242,46 @@
     }
 
     input {
-
         width: 50%;
-
         padding: 18px 0;
-
-
         background: #FFF;
-
-
+        font-weight: 600;
 
         &::placeholder {
             color: #848EB4;
             font-family: "Poppins";
-            font-size: 18px;
             font-weight: 400;
             line-height: 130%;
+            @include adaptiveValue("font-size", 18, 16);
         }
 
         &:focus {
             outline: none;
         }
-
     }
 
     .label {
         font-family: "Poppins";
-        font-size: 20px;
         font-weight: 500;
         line-height: 130%;
+        @include adaptiveValue("font-size", 20, 16);
     }
 
     .label-block {
         display: flex;
         justify-content: space-between;
         align-items: center;
+
+        @media (360px <=width <=767px) {
+            & {
+
+                flex-direction: column;
+                align-items: flex-start;
+
+
+
+            }
+        }
     }
 
     .step-two__input-block {
@@ -233,6 +297,12 @@
         border: 1px solid #C6CBDC;
         background: #FFF;
         box-shadow: 4px 4px 12px 2px rgba(156, 170, 218, 0.30);
+
+        @media (360px <=width <=767px) {
+            & {
+                width: 100%;
+            }
+        }
 
 
     }
@@ -255,7 +325,7 @@
         font-weight: 600;
         text-transform: uppercase;
         gap: 10px;
-        margin-bottom: 40px;
+        margin-bottom: 16px;
         margin-top: 20px;
 
         span {
@@ -269,8 +339,14 @@
         align-items: center;
         gap: 20px;
         font-family: "Poppins";
-        font-size: 16px;
         font-weight: 300;
+        border-top: 1px solid #C6CBDC;
+        padding-top: 16px;
+        @include adaptiveValue("font-size", 16, 10);
+
+        svg {
+            min-width: 50px;
+        }
     }
 
     .state-city__from {
@@ -315,6 +391,13 @@
     .valid-btn {
         cursor: pointer;
         background: #FDA41B;
+
+        @media (360px <=width <=767px) {
+            & {
+                width: 100%;
+            }
+        }
+
     }
 
     .invalid-btn {
@@ -323,49 +406,6 @@
         background: #FCD589;
     }
 
-    .data-datepicker {
-        border-radius: 10px;
-        border: 1px solid #C6CBDC;
-        width: 100%;
-        background: #FFF;
-        padding: 18px 60px;
-        cursor: pointer;
-        color: #000B1B;
-
-        font-family: "Poppins";
-        font-size: 18px;
-        font-weight: 600;
-        line-height: 130%;
-    }
-
-    .picker-wrapper {
-        position: relative;
-
-        &:before {
-            content: "";
-            background: url("src/img/data-picer.svg");
-            height: 20px;
-            width: 20px;
-            position: absolute;
-            top: 50%;
-            left: 3%;
-            transform: translate(-3%, -50%);
-        }
-
-        &::after {
-            content: "";
-            background: url("src/img/2.svg");
-            background-repeat: no-repeat;
-            height: 20px;
-            width: 30px;
-            position: absolute;
-            top: 50%;
-            right: 3%;
-            transform: translate(-3%, -50%);
-
-        }
-
-    }
 
     .step-fourth__quotes {
         color: #35B882;
@@ -382,7 +422,7 @@
             width: 20px;
             position: absolute;
             top: 50%;
-            left: 2%;
+            left: 16px;
             transform: translateY(-50%);
         }
 
@@ -430,11 +470,23 @@
     width: 100%;
     margin-bottom: 16px;
     gap: 16px;
+
+    @media (360px <=width <=767px) {
+        & {
+            flex-direction: column
+        }
+    }
 }
 
 .first-name-label {
     position: relative;
     width: 50%;
+
+    @media (360px <=width <=767px) {
+        & {
+            width: 100%;
+        }
+    }
 
     &::before {
         position: absolute;
@@ -463,7 +515,6 @@
         font-weight: 600;
         line-height: 130%;
 
-        /* 23.4px */
         &::placeholder {
             color: #848EB4;
             font-family: "Poppins";
@@ -479,6 +530,12 @@
 .last-name-label {
     width: 50%;
     position: relative;
+
+    @media (360px <=width <=767px) {
+        & {
+            width: 100%;
+        }
+    }
 
     &::before {
         position: absolute;
@@ -498,15 +555,12 @@
         border-radius: 10px;
         border: 1px solid #C6CBDC;
         padding-left: 60px;
-
         background: #FFF;
         color: #000B1B;
-
         font-family: "Poppins";
         font-size: 18px;
         font-weight: 600;
         line-height: 130%;
-        /* 23.4px */
         width: 100%;
 
         &::placeholder {
@@ -545,13 +599,11 @@
         padding-left: 60px;
         background: #FFF;
         color: #000B1B;
-
         font-family: "Poppins";
         font-size: 18px;
         font-weight: 600;
         line-height: 130%;
 
-        /* 23.4px */
         &::placeholder {
             color: #848EB4;
             font-family: "Poppins";
@@ -567,8 +619,11 @@
         content: '';
         height: 4px;
         border-radius: 4px;
-        width: 79%;
+
         background: #35B882;
+        @include adaptiveValue("width", 710, 120);
+
+
     }
 }
 
@@ -621,15 +676,18 @@
 
     img {
         margin: 0 auto;
+        @include adaptiveValue("width", 125, 67);
+
+
     }
 
     .popup__text {
-        width: 160px;
-        height: 160px;
         background-color: #fff;
         display: flex;
         justify-content: center;
         align-items: center;
+        @include adaptiveValue("width", 160, 100);
+        @include adaptiveValue("height", 160, 100);
     }
 
     .popup__imgblock {
@@ -637,9 +695,55 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        @include adaptiveValue("padding-top", 40, 20);
     }
+}
+
+#step-three {
+    #step-three-btn {}
+}
+
+.valid-btn {
+    cursor: pointer;
+    background: #FDA41B;
+}
+
+.invalid-btn {
+    pointer-events: none;
+    cursor: not-allowed;
+    background: #FCD589;
 }
 
 .popup__content {
     padding: 40px;
+    @include adaptiveValue("padding", 40, 0);
+
+}
+
+
+#step-fourth {
+    .step-two__progres-percent {
+        &::after {
+            width: 28% !important;
+        }
+    }
+}
+
+.section-form {
+    #step-fifth {
+        .step-two__quotes {
+            margin-left: 0;
+        }
+    }
+}
+
+.step-fifthh {
+    display: block !important;
+}
+
+
+
+.section-form-block {
+    margin-bottom: 89px;
+    @include adaptiveValue("margin-bottom", 89, 60);
 }
