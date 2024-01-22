@@ -1,7 +1,6 @@
 .call-component-btn {
     border-radius: 10px;
     background: var(--color-btn-now);
-    box-shadow: 3px 3px 15px 0px #763200 inset, -3px -3px 15px 0px #763200 inset;
     color: #FFFFFD;
     display: flex;
     max-width: 281px;
@@ -10,6 +9,12 @@
     align-items: center;
     gap: 16px;
     cursor: pointer;
+    transition: background 0.4s ease;
+    &:hover{
+    background: #FF6400;
+        transition: background 0.4s ease;
+        
+    }
 
     ._icon-phone {
         font-size: 20px;

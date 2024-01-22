@@ -5,19 +5,67 @@
 
 
 <body>
+
     <div class="wrapper ">
         <Header srcpars="src/html/layout/Header.html" />
-        <Distance srcpars="src/html/layout/Distance.html" />
+        <section class="distance-description-block">
+            <img class="distance-description-block__img" alt="img" src="./src/img/hero-bg-main.jpg" srcset="
+              ./src/img/hero-bg-mobile.jpg 370w,
+              ./src/img/hero-bg-mobile.jpg 640w,
+              ./src/img/hero-bg-mobile.jpg 920w,
+              ./src/img/hero-bg-main.jpg 1220w,
+              ./src/img/hero-bg-main.jpg 1920w" sizes=" (max-width: 370px) 370w,
+                (max-width: 640px) 640w,
+                (max-width: 920px) 920w,
+                (max-width: 1220px) 1220w,
+                1920w">
+            <div class="distance-description-block__container">
+                <div class="distance-description-block__title-block">
+                    <h1>Top Rated Long Distance Moving Companies 2023</h1>
+                    <p>Our top-rated long distance moving companies shine across all areas, from pricing and service
+                        options to
+                        specialty
+                        services and overall customer satisfaction.</p>
+                </div>
+                <p class="hero-user" data-da=".distance-description-block__title-block,1000,1">
+                    <span class="hero-user__top">
+                        <img class="hero-user__img" src="./src/img/hero-user.png " alt="img">
+                        <span class="hero-user__info">
+                            <span class="hero-user__info-text">Written by</span>
+                            <span class="hero-user__info-social-block">
+                                <span class="hero-user__info-title">Alex Sherr</span>
+                                <a class="hero-user__info-icon _icon-planet" target="_blank"></a>
+                                <a class="hero-user__info-icon _icon-linkedin"
+                                    href="https://www.linkedin.com/company/my-long-distance-move-movers/about/"
+                                    target="_blank"></a>
+                                <a href="https://www.youtube.com/channel/UC79ku3NfiL0oogO-OfLxsdA"
+                                    class="hero-user__info-icon _icon-yutube" target="_blank"></a>
+                                <a href="https://twitter.com/mylongdistancem" class="hero-user__info-icon _icon-tviter"
+                                    target="_blank"></a>
+                            </span>
+                        </span>
+                    </span>
+                    <span class="hero-user__info-description">Alex, with 20+ years in the moving industry, founded My
+                        Long
+                        Distance
+                        Movers to help choose moving services and offers
+                        advice through his writings.
+                    </span>
+                </p>
+            </div>
+        </section>
         <section class="choises">
             <div class="choises__container">
                 <div class="choises__cards">
-                    <article class="choises__card midland">
+                    <article class="choises__card midland" data-popup="#popup">
                         <span class="mark-choice"><span>top choice</span></span>
                         <a class="choises__card-logo-container">
                             <img src="./src/img/midland.png" alt="img">
+                            <div class="content-container-first"></div>
                         </a>
-                        <div class="choises__card-info-block" data-da=".first-nav,1000,1">
-                            <h2 class="choises__card-info-block-title">Midland Van Lines</h2>
+                        <div class="choises__card-info-block">
+                            <h2 class="choises__card-info-block-title " data-da=".content-container-first,1000,0">
+                                Midland Van Lines</h2>
                             <ul class="choises__card-info-list">
                                 <li class="choises__card-info-item">
                                     <span class="choises__card-item-icon _icon-ok"></span>
@@ -34,11 +82,11 @@
                             </ul>
                         </div>
                         <div class="choises__card-nav-block first-nav">
-                            <div class="rating-block">
+                            <div class="rating-block" data-da=".content-container-first,1000,1">
                                 <span class="rating-block__number first-nav-rating">9.9</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">outstanding</span>
-                                    <span class="rating-block__stars" data-da=".first-nav-rating,871,2">
+                                    <span class="rating-block__stars">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
                                         </div>
@@ -49,12 +97,14 @@
                             <Get srcpars="src/html/components/Get.html" />
                         </div>
                     </article>
-                    <article class="choises__card mayzln">
+                    <article class="choises__card mayzln" data-popup="#popup">
                         <div class="choises__card-logo-container">
                             <img src="./src/img/mayzlin.png" alt="img">
+                            <div class="content-container-second"></div>
                         </div>
-                        <div class="choises__card-info-block" data-da=".second-nav,1000,1">
-                            <h2 class="choises__card-info-block-title">Mayzlin Relocation</h2>
+                        <div class="choises__card-info-block">
+                            <h2 class="choises__card-info-block-title" data-da=".content-container-second,1000,0">
+                                Mayzlin Relocation</h2>
                             <ul class="choises__card-info-list">
                                 <li class="choises__card-info-item">
                                     <span class="choises__card-item-icon _icon-ok"></span>
@@ -71,11 +121,11 @@
                             </ul>
                         </div>
                         <div class="choises__card-nav-block second-nav">
-                            <div class="rating-block">
+                            <div class="rating-block" data-da=".content-container-second,1000,1">
                                 <span class="rating-block__number second-nav-rating">9.8</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">excellent</span>
-                                    <span class="rating-block__stars" data-da=".second-nav-rating,871,2">
+                                    <span class="rating-block__stars">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
                                         </div>
@@ -86,13 +136,15 @@
                             <Get srcpars="src/html/components/Get.html" />
                         </div>
                     </article>
-                    <article class="choises__card van-lines">
+                    <article class="choises__card van-lines" data-popup="#popup">
                         <a href="https://www.mylongdistancemovers.com/vanlinesinc/"
                             class="choises__card-logo-container">
                             <img src="./src/img/van-lines.png" alt="img">
+                            <div class="content-container-third"></div>
                         </a>
-                        <div class="choises__card-info-block" data-da=".third-nav,1000,1">
-                            <h2 class="choises__card-info-block-title">Van Lines Inc</h2>
+                        <div class="choises__card-info-block">
+                            <h2 class="choises__card-info-block-title" data-da=".content-container-third,1000,0">Van
+                                Lines Inc</h2>
                             <ul class="choises__card-info-list">
                                 <li class="choises__card-info-item">
                                     <span class="choises__card-item-icon _icon-ok"></span>
@@ -109,11 +161,11 @@
                             </ul>
                         </div>
                         <div class="choises__card-nav-block third-nav">
-                            <div class="rating-block">
+                            <div class="rating-block" data-da=".content-container-third,1000,1">
                                 <span class="rating-block__number third-nav-rating">9.6</span>
                                 <span class="rating-block__value">
                                     <span class="rating-block__label">very good</span>
-                                    <span class="rating-block__stars" data-da=".third-nav-rating,871,2">
+                                    <span class="rating-block__stars">
                                         <div class="rating-user">
                                             <span class="icon-users"></span>
                                         </div>
@@ -126,23 +178,7 @@
                     </article>
                 </div>
                 <div class="choises__saidbar-cards">
-                    <article class="choises__saidbar-card-recomended">
-                        <h3>Reccomended reads</h3>
-                        <div class="choises__recomended-list">
-                            <article class="choises__recomended-item">
-                                <h4>9 Tips For Choosing A Long Distance Mover</h4>
-                                <a href="">Learn More</a>
-                            </article>
-                            <article class="choises__recomended-item">
-                                <h4>The Ultimate Moving Checklist</h4>
-                                <a href="">Learn More</a>
-                            </article>
-                            <article class="choises__recomended-item">
-                                <h4>3 Tips for Moving Your Cat Long-Distance</h4>
-                                <a href="">Learn More</a>
-                            </article>
-                        </div>
-                    </article>
+
                     <article class="choises__saidbar-card-editorial">
                         <h3>Editorial reviews</h3>
                         <div class="choises__editorial-list">
@@ -175,7 +211,7 @@
                             </article>
                         </div>
                     </article>
-                    <article class="choises__saidbar-card-forvard">
+                    <article class="choises__card choises__saidbar-card-forvard " data-popup="#popup">
                         <h3 hidden>forward</h3>
                         <div class="choises__forvard-img-container">
                             <img src="./src/img/midland.png" alt="img">
@@ -185,215 +221,501 @@
                                 <div class="rating-user">
                                     <span class="icon-users"></span>
                                 </div>
-                                <span class="choises__forvard-rating-number">4.9</span>
+                                <span class="choises__forvard-rating-number">9.9</span>
                         </div>
-                        <a class="choises__forvard-link-get" href="">Get a Quote</a>
-                        <a class="choises__forvard-link-phone" href="">Call: 83379911213</a>
+                        <span class="choises__forvard-link-get _icon-big-arrow-right" href="">Get a Quote</span>
+                        <span class="choises__forvard-link-phone _icon-phone" href="">833 799 12 13</span>
+                    </article>
+
+                    <article class="choises__saidbar-card-recomended">
+                        <h3>Reccomended reads</h3>
+                        <div class="choises__recomended-list">
+                            <article class="choises__recomended-item">
+                                <h4>9 Tips For Choosing A Long Distance Mover</h4>
+                                <a href="">Learn More</a>
+                            </article>
+                            <article class="choises__recomended-item">
+                                <h4>The Ultimate Moving Checklist</h4>
+                                <a href="">Learn More</a>
+                            </article>
+                            <article class="choises__recomended-item">
+                                <h4>3 Tips for Moving Your Cat Long-Distance</h4>
+                                <a href="">Learn More</a>
+                            </article>
+                        </div>
                     </article>
                 </div>
             </div>
         </section>
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <AboutUs srcpars="src/html/layout/AboutUs.html" />
-        <section class="section-form">
-            <h2 hidden>form</h2>
-            <div class="section-form__container">
-                <form id="form-step" class="form-calculator">
 
-
-                    <div id="step-one" class="step-block-one step-block">
-                        <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-                        <label class="form-calculator__zipe-code" for="zipe-code">
-                            <span>Where Are Your Moving From?</span>
-                            <span class="input-zip-error">
-                                <img src="./src/img/error-zip.svg" alt="img">
-                                <span>Zip Code
-                                    should contain 5
-                                    digits</span>
-                            </span>
-                            <input class=" " type="text" id="zipe-code" name="name" placeholder="Moving From Zip Code"
-                                required>
-                        </label>
-
-                        <div id="btn-step-one" class="btn-zipe-code call-component-btn disable-click">
-                            <span>estimate my moving</span>
-                            <span class="_icon-big-arrow-right"></span>
-                        </div>
-                        <span class="requested-text">1, 765 people requested an estimate!</span>
-                    </div>
-
-
-
-                    <div id="step-two" class="step-block-two step-block" hidden>
-                        <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-                        <div class="step-block__items">
-                            <h4>Where Are Your Moving To?</h4>
-                            <div class="selects-block">
-                                <select name="form[]" data-class-modif="form">
-                                    <option value="1" selected>Select State1</option>
-                                    <option value="2">Absarokee, MT</option>
-                                    <option value="3">Acton, MT</option>
-                                    <option value="4">Ashland, MT</option>
-                                    <option value="5">Ballantine, MT</option>
-                                    <option value="6">Ballantine, MT</option>
-                                    <option value="7">Ballantine, MT</option>
-                                    <option value="8">Ballantine, MT</option>
-                                    <option value="9">Ballantine, MT</option>
-                                    <option value="10">Ballantine, MT</option>
-                                    <option value="11">Ballantine, MT</option>
-                                    <option value="12">Ballantine, MT</option>
-                                    <option value="13">Ballantine, MT</option>
-                                    <option value="14">Ballantine, MT</option>
-                                </select>
-                                <select name="form[]" data-class-modif="form">
-                                    <option value="1" selected>Select City</option>
-                                    <option value="2">Absarokee, MT</option>
-                                    <option value="3">Acton, MT</option>
-                                    <option value="4">Ashland, MT</option>
-                                    <option value="5">Ballantine, MT</option>
-                                    <option value="6">Ballantine, MT</option>
-                                    <option value="7">Ballantine, MT</option>
-                                    <option value="8">Ballantine, MT</option>
-                                    <option value="9">Ballantine, MT</option>
-                                    <option value="10">Ballantine, MT</option>
-                                    <option value="11">Ballantine, MT</option>
-                                    <option value="12">Ballantine, MT</option>
-                                    <option value="13">Ballantine, MT</option>
-                                    <option value="14">Ballantine, MT</option>
-                                </select>
+        <div class="section-form-block" id="section-form-block">
+            <section class="section-form" id="section-form">
+                <h2 hidden></h2>
+                <div class="section-form__container">
+                    <form id="form-step" class="form-calculator scroll-trigger">
+                        <div id="step-one" class="step-one steps">
+                            <span class="form-calculator__title">Let’s Calculate Your Move</span>
+                            <span class="form-calculator__sub-title">How many rooms are in your home?</span>
+                            <span class="form-calculator__description">Help us better estimate your moving needs</span>
+                            <ul class="section-form__list" id="step-one-list">
+                                <li class="section-form__list-item">1 Room</li>
+                                <li class="section-form__list-item">2 Rooms</li>
+                                <li class="section-form__list-item">3 Rooms</li>
+                                <li class="section-form__list-item">4 Rooms</li>
+                                <li class="section-form__list-item">5+ Rooms</li>
+                            </ul>
+                            <div class="section-form__request-block">
+                                <span class="section-form__request-count" id="stepOneCount">1, 765</span>
+                                <span class="section-form__request-text"> people requested an estimate!</span>
                             </div>
                         </div>
-                        <div id="btn-step-two" class="btn-zipe-code call-component-btn  disable-click">
-
-                            <span>estimate my moving</span>
-                            <span class="_icon-big-arrow-right"></span>
-                        </div>
-                        <span class="requested-text">1, 765 people requested an estimate!</span>
-                    </div>
-
-                    <div id="step-three" class="step-block-three step-block" hidden>
-                        <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-                        <div class="step-block__items">
-                            <div class="selects-block">
-                                <div class="selects-block__item">
-                                    <h4>When is Your Move?</h4>
-                                    <input id="picer" readonly type="text" class="data-datepicker select__title "
-                                        placeholder="select a date" data-datepicker>
+                        <div id="step-two" class="step-two steps" hidden>
+                            <div class="step-two__progres-block">
+                                <span class="step-two__progres-percent"><span>40%</span></span>
+                                <span class="step-two__quotes"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 20 20" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.98686 0C12.7201 8.83049 11.1695 7.2799 20 9.98686C11.1695 12.7201 12.7201 11.1695 9.98686 20C7.2799 11.1695 8.83049 12.7201 2.50637e-06 9.98686C8.83049 7.2799 7.2799 8.83049 9.98686 0ZM4.44153 16.5046C4.17871 15.6636 4.3364 15.8213 3.4954 15.5585C4.3364 15.2957 4.17871 15.4534 4.44153 14.6124C4.70434 15.4534 4.54665 15.2957 5.38765 15.5585C4.54665 15.8213 4.70434 15.6636 4.44153 16.5046ZM1.73456 16.5046C2.20762 18.0552 1.94481 17.7661 3.4954 18.2392C1.94481 18.7122 2.20762 18.4494 1.73456 20C1.2615 18.4494 1.55059 18.7122 2.50637e-06 18.2392C1.55059 17.7661 1.2615 18.0552 1.73456 16.5046ZM16.7937 0C17.661 2.83837 17.1616 2.33903 20 3.20631C17.1616 4.07359 17.661 3.60053 16.7937 6.4389C15.9001 3.60053 16.3995 4.07359 13.5611 3.20631C16.3995 2.33903 15.9001 2.83837 16.7937 0Z"
+                                            fill="var(--color-progress-bar)" />
+                                        <path
+                                            d="M5.7293 4.67806C4.17871 4.20499 4.44152 4.49409 3.96846 2.9435C3.4954 4.49409 3.78449 4.20499 2.2339 4.67806C3.78449 5.15112 3.4954 4.88831 3.96846 6.4389C4.44152 4.88831 4.17871 5.15112 5.7293 4.67806Z"
+                                            fill="#FDA41B" />
+                                        <path
+                                            d="M15.4534 15.5585C16.2943 15.8213 16.1367 15.6636 16.3995 16.5046C16.6623 15.6636 16.5046 15.8213 17.3456 15.5585C16.5046 15.2957 16.6623 15.4534 16.3995 14.6124C16.1367 15.4534 16.2943 15.2957 15.4534 15.5585Z"
+                                            fill="#FDA41B" />
+                                    </svg>Quotes avaliable</span>
+                            </div>
+                            <span class="step-two__title">Where are you moving?</span>
+                            <span class="step-two__text">Let's make your move a breeze and start saving today</span>
+                            <div class="label-block">
+                                <span class="label">From:</span>
+                                <div id="step-two-input-from-block" class="step-two__input-block">
+                                    <input id="step-two-input-from" autocomplete="off" type="text"
+                                        placeholder="Enter ZIP Code" class="input">
+                                    <span class="state-city">
+                                        <span id="step-two-input-from-rezult" class="state-city__from"></span>
+                                        <span id="step-two-input-svg-from" hidden><svg
+                                                xmlns="http://www.w3.org/2000/svg" width="16" height="18"
+                                                viewBox="0 0 16 18" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8.00033 0.25C11.9099 0.25 15.0837 3.42375 15.0837 7.33333C15.0837 9.36917 14.0678 11.4646 12.7924 13.2242C11.0116 15.6817 8.78449 17.4733 8.78449 17.4733C8.32658 17.8417 7.67407 17.8421 7.21616 17.4737C7.21616 17.4737 4.98908 15.6817 3.20824 13.2242C1.93283 11.4646 0.916992 9.36917 0.916992 7.33333C0.916992 3.42375 4.09074 0.25 8.00033 0.25ZM8.00033 4.41667C9.60991 4.41667 10.917 5.72375 10.917 7.33333C10.917 8.94292 9.60991 10.25 8.00033 10.25C6.39074 10.25 5.08366 8.94292 5.08366 7.33333C5.08366 5.72375 6.39074 4.41667 8.00033 4.41667Z"
+                                                    fill="#35B782" />
+                                            </svg>
+                                        </span>
+                                    </span>
                                 </div>
-                                <div class="selects-block__item">
-                                    <h4>How Large is Your Move?</h4>
+                            </div>
+                            <div id="step-two-input-from-error" class="error" hidden>Zip Code should contain 5 digits
+                            </div>
+                            <div class="label-block">
+                                <span class="label">To:</span>
+                                <div id="step-two-input-to-block" class="step-two__input-block">
+                                    <input id="step-two-input-to" autocomplete="off" type="text"
+                                        placeholder="Enter ZIP Code" class="input">
+                                    <span class="state-city">
+                                        <span id="step-two-input-to-rezult" class="state-city__to"></span>
+                                        <span id="step-two-input-svg-to" hidden><svg xmlns="http://www.w3.org/2000/svg"
+                                                width="16" height="18" viewBox="0 0 16 18" fill="none">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M8.00033 0.25C11.9099 0.25 15.0837 3.42375 15.0837 7.33333C15.0837 9.36917 14.0678 11.4646 12.7924 13.2242C11.0116 15.6817 8.78449 17.4733 8.78449 17.4733C8.32658 17.8417 7.67407 17.8421 7.21616 17.4737C7.21616 17.4737 4.98908 15.6817 3.20824 13.2242C1.93283 11.4646 0.916992 9.36917 0.916992 7.33333C0.916992 3.42375 4.09074 0.25 8.00033 0.25ZM8.00033 4.41667C9.60991 4.41667 10.917 5.72375 10.917 7.33333C10.917 8.94292 9.60991 10.25 8.00033 10.25C6.39074 10.25 5.08366 8.94292 5.08366 7.33333C5.08366 5.72375 6.39074 4.41667 8.00033 4.41667Z"
+                                                    fill="#35B782" />
+                                            </svg>
+                                        </span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div id="step-two-input-to-error" class="error" hidden>Zip Code should contain 5 digits
+                            </div>
+                            <div id="step-two-btn" class="step-two__btn">continue<span
+                                    class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="step-two__description"><svg xmlns="http://www.w3.org/2000/svg" width="50"
+                                    height="50" viewBox="0 0 50 50" fill="none">
+                                    <g clip-path="url(#clip0_65_15054)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M24.9672 0C31.8003 22.0762 27.9238 18.1997 50 24.9671C27.9238 31.8003 31.8003 27.9238 24.9672 50C18.1997 27.9238 22.0762 31.8003 6.26593e-06 24.9671C22.0762 18.1997 18.1997 22.0762 24.9672 0ZM11.1038 41.2615C10.4468 39.159 10.841 39.5532 8.73851 38.8962C10.841 38.2392 10.4468 38.6334 11.1038 36.5309C11.7608 38.6334 11.3666 38.2392 13.4691 38.8962C11.3666 39.5532 11.7608 39.159 11.1038 41.2615ZM4.33641 41.2615C5.51906 45.138 4.86203 44.4152 8.73851 45.5979C4.86203 46.7805 5.51906 46.1235 4.33641 50C3.15375 46.1235 3.87648 46.7805 6.26593e-06 45.5979C3.87648 44.4152 3.15375 45.138 4.33641 41.2615ZM41.9842 0C44.1524 7.09593 42.9041 5.84757 50 8.01577C42.9041 10.184 44.1524 9.00131 41.9842 16.0972C39.7503 9.00131 40.9987 10.184 33.9028 8.01577C40.9987 5.84757 39.7503 7.09593 41.9842 0Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M14.3233 11.6951C10.4468 10.5125 11.1038 11.2352 9.92116 7.35874C8.7385 11.2352 9.46124 10.5125 5.58476 11.6951C9.46124 12.8778 8.7385 12.2208 9.92116 16.0972C11.1038 12.2208 10.4468 12.8778 14.3233 11.6951Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M38.6334 38.8962C40.7359 39.5532 40.3417 39.159 40.9987 41.2615C41.6557 39.159 41.2615 39.5532 43.364 38.8962C41.2615 38.2392 41.6557 38.6334 40.9987 36.5309C40.3417 38.6334 40.7359 38.2392 38.6334 38.8962Z"
+                                            fill="#41518B" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_65_15054">
+                                            <rect width="50" height="50" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>Did you know that in addition to standard moving services,
+                                International Van Lines also offers specialized services such
+                                as international auto shipping.</span>
+                        </div>
+                        <div id="step-three" class="step-two steps step-three" hidden>
+                            <div class="step-two__progres-block">
+                                <span
+                                    class="step-two__progres-percent step-three__progres-percent"><span>60%</span></span>
+                                <span class="step-two__quotes"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                                        height="20" viewBox="0 0 20 20" fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.98686 0C12.7201 8.83049 11.1695 7.2799 20 9.98686C11.1695 12.7201 12.7201 11.1695 9.98686 20C7.2799 11.1695 8.83049 12.7201 2.50637e-06 9.98686C8.83049 7.2799 7.2799 8.83049 9.98686 0ZM4.44153 16.5046C4.17871 15.6636 4.3364 15.8213 3.4954 15.5585C4.3364 15.2957 4.17871 15.4534 4.44153 14.6124C4.70434 15.4534 4.54665 15.2957 5.38765 15.5585C4.54665 15.8213 4.70434 15.6636 4.44153 16.5046ZM1.73456 16.5046C2.20762 18.0552 1.94481 17.7661 3.4954 18.2392C1.94481 18.7122 2.20762 18.4494 1.73456 20C1.2615 18.4494 1.55059 18.7122 2.50637e-06 18.2392C1.55059 17.7661 1.2615 18.0552 1.73456 16.5046ZM16.7937 0C17.661 2.83837 17.1616 2.33903 20 3.20631C17.1616 4.07359 17.661 3.60053 16.7937 6.4389C15.9001 3.60053 16.3995 4.07359 13.5611 3.20631C16.3995 2.33903 15.9001 2.83837 16.7937 0Z"
+                                            fill="var(--color-progress-bar)" />
+                                        <path
+                                            d="M5.7293 4.67806C4.17871 4.20499 4.44152 4.49409 3.96846 2.9435C3.4954 4.49409 3.78449 4.20499 2.2339 4.67806C3.78449 5.15112 3.4954 4.88831 3.96846 6.4389C4.44152 4.88831 4.17871 5.15112 5.7293 4.67806Z"
+                                            fill="#FDA41B" />
+                                        <path
+                                            d="M15.4534 15.5585C16.2943 15.8213 16.1367 15.6636 16.3995 16.5046C16.6623 15.6636 16.5046 15.8213 17.3456 15.5585C16.5046 15.2957 16.6623 15.4534 16.3995 14.6124C16.1367 15.4534 16.2943 15.2957 15.4534 15.5585Z"
+                                            fill="#FDA41B" />
+                                    </svg>Quotes avaliable</span>
+                            </div>
+                            <span class="step-two__title">When are you planning to move?</span>
+                            <span class="step-two__text">Giving us a time frame helps us find the best moving solution
+                                for
+                                your needs</span>
+                            <span class="picker-wrapper">
+                                <input id="picer" readonly type="text" class="data-datepicker" placeholder="MM/DD/YYYY"
+                                    data-datepicker>
+                            </span>
+                            <div id="step-three-btn" class="step-two__btn">continue<span
+                                    class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="step-two__description"><svg xmlns="http://www.w3.org/2000/svg" width="50"
+                                    height="50" viewBox="0 0 50 50" fill="none">
+                                    <g clip-path="url(#clip0_65_15054)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M24.9672 0C31.8003 22.0762 27.9238 18.1997 50 24.9671C27.9238 31.8003 31.8003 27.9238 24.9672 50C18.1997 27.9238 22.0762 31.8003 6.26593e-06 24.9671C22.0762 18.1997 18.1997 22.0762 24.9672 0ZM11.1038 41.2615C10.4468 39.159 10.841 39.5532 8.73851 38.8962C10.841 38.2392 10.4468 38.6334 11.1038 36.5309C11.7608 38.6334 11.3666 38.2392 13.4691 38.8962C11.3666 39.5532 11.7608 39.159 11.1038 41.2615ZM4.33641 41.2615C5.51906 45.138 4.86203 44.4152 8.73851 45.5979C4.86203 46.7805 5.51906 46.1235 4.33641 50C3.15375 46.1235 3.87648 46.7805 6.26593e-06 45.5979C3.87648 44.4152 3.15375 45.138 4.33641 41.2615ZM41.9842 0C44.1524 7.09593 42.9041 5.84757 50 8.01577C42.9041 10.184 44.1524 9.00131 41.9842 16.0972C39.7503 9.00131 40.9987 10.184 33.9028 8.01577C40.9987 5.84757 39.7503 7.09593 41.9842 0Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M14.3233 11.6951C10.4468 10.5125 11.1038 11.2352 9.92116 7.35874C8.7385 11.2352 9.46124 10.5125 5.58476 11.6951C9.46124 12.8778 8.7385 12.2208 9.92116 16.0972C11.1038 12.2208 10.4468 12.8778 14.3233 11.6951Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M38.6334 38.8962C40.7359 39.5532 40.3417 39.159 40.9987 41.2615C41.6557 39.159 41.2615 39.5532 43.364 38.8962C41.2615 38.2392 41.6557 38.6334 40.9987 36.5309C40.3417 38.6334 40.7359 38.2392 38.6334 38.8962Z"
+                                            fill="#41518B" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_65_15054">
+                                            <rect width="50" height="50" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>In addition to having the largest moving network in the world, Allied Van Lines
+                                also
+                                has more than 95 years of
+                                experience.</span>
+                        </div>
+                        <div id="step-fourth" class="step-two steps step-fourth" hidden>
+                            <span class="sub-info">Preparing to send your estimate</span>
+                            <div class="step-two__progres-block step-fourth__progres-block">
+                                <span
+                                    class="step-two__progres-percent step-fourth__progres-percent"><span>60%</span></span>
+                                <span class="step-two__quotes step-fourth__quotes"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.98686 0C12.7201 8.83049 11.1695 7.2799 20 9.98686C11.1695 12.7201 12.7201 11.1695 9.98686 20C7.2799 11.1695 8.83049 12.7201 2.50637e-06 9.98686C8.83049 7.2799 7.2799 8.83049 9.98686 0ZM4.44153 16.5046C4.17871 15.6636 4.3364 15.8213 3.4954 15.5585C4.3364 15.2957 4.17871 15.4534 4.44153 14.6124C4.70434 15.4534 4.54665 15.2957 5.38765 15.5585C4.54665 15.8213 4.70434 15.6636 4.44153 16.5046ZM1.73456 16.5046C2.20762 18.0552 1.94481 17.7661 3.4954 18.2392C1.94481 18.7122 2.20762 18.4494 1.73456 20C1.2615 18.4494 1.55059 18.7122 2.50637e-06 18.2392C1.55059 17.7661 1.2615 18.0552 1.73456 16.5046ZM16.7937 0C17.661 2.83837 17.1616 2.33903 20 3.20631C17.1616 4.07359 17.661 3.60053 16.7937 6.4389C15.9001 3.60053 16.3995 4.07359 13.5611 3.20631C16.3995 2.33903 15.9001 2.83837 16.7937 0Z"
+                                            fill="#35B882" />
+                                        <path
+                                            d="M5.7293 4.67806C4.17871 4.20499 4.44152 4.49409 3.96846 2.9435C3.4954 4.49409 3.78449 4.20499 2.2339 4.67806C3.78449 5.15112 3.4954 4.88831 3.96846 6.4389C4.44152 4.88831 4.17871 5.15112 5.7293 4.67806Z"
+                                            fill="#FDA41B" />
+                                        <path
+                                            d="M15.4534 15.5585C16.2943 15.8213 16.1367 15.6636 16.3995 16.5046C16.6623 15.6636 16.5046 15.8213 17.3456 15.5585C16.5046 15.2957 16.6623 15.4534 16.3995 14.6124C16.1367 15.4534 16.2943 15.2957 15.4534 15.5585Z"
+                                            fill="#FDA41B" />
+                                    </svg>Quotes avaliable</span>
+                            </div>
+                            <span class="step-two__title">Where can we send your moving estimate?</span>
+                            <span class="step-two__text">You could save <span>up to 40%</span> on your moving costs
+                                through
+                                special
+                                offers from moving companies.</span>
+                            <label class="step-fourth__input" for="mail-code">
+                                <input class="mail-code " type="text" id="mail-code" name="name"
+                                    placeholder="Email Adress" required>
+                            </label>
+                            <div id="step-fourth-btn" class="step-two__btn invalid-btn">continue<span
+                                    class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="step-two__description"><svg xmlns="http://www.w3.org/2000/svg" width="50"
+                                    height="50" viewBox="0 0 50 50" fill="none">
+                                    <g clip-path="url(#clip0_65_15054)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M24.9672 0C31.8003 22.0762 27.9238 18.1997 50 24.9671C27.9238 31.8003 31.8003 27.9238 24.9672 50C18.1997 27.9238 22.0762 31.8003 6.26593e-06 24.9671C22.0762 18.1997 18.1997 22.0762 24.9672 0ZM11.1038 41.2615C10.4468 39.159 10.841 39.5532 8.73851 38.8962C10.841 38.2392 10.4468 38.6334 11.1038 36.5309C11.7608 38.6334 11.3666 38.2392 13.4691 38.8962C11.3666 39.5532 11.7608 39.159 11.1038 41.2615ZM4.33641 41.2615C5.51906 45.138 4.86203 44.4152 8.73851 45.5979C4.86203 46.7805 5.51906 46.1235 4.33641 50C3.15375 46.1235 3.87648 46.7805 6.26593e-06 45.5979C3.87648 44.4152 3.15375 45.138 4.33641 41.2615ZM41.9842 0C44.1524 7.09593 42.9041 5.84757 50 8.01577C42.9041 10.184 44.1524 9.00131 41.9842 16.0972C39.7503 9.00131 40.9987 10.184 33.9028 8.01577C40.9987 5.84757 39.7503 7.09593 41.9842 0Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M14.3233 11.6951C10.4468 10.5125 11.1038 11.2352 9.92116 7.35874C8.7385 11.2352 9.46124 10.5125 5.58476 11.6951C9.46124 12.8778 8.7385 12.2208 9.92116 16.0972C11.1038 12.2208 10.4468 12.8778 14.3233 11.6951Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M38.6334 38.8962C40.7359 39.5532 40.3417 39.159 40.9987 41.2615C41.6557 39.159 41.2615 39.5532 43.364 38.8962C41.2615 38.2392 41.6557 38.6334 40.9987 36.5309C40.3417 38.6334 40.7359 38.2392 38.6334 38.8962Z"
+                                            fill="#41518B" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_65_15054">
+                                            <rect width="50" height="50" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>We’ve identified some potential savings & discounts for you based on the location
+                                you
+                                provided.</span>
+                        </div>
+                        <div id="step-fifth" class="step-two steps step-fifth" hidden>
+                            <div class="step-two__progres-block step-fourth__progres-block step-fifes">
+                                <span class="step-two__quotes step-fourth__quotes "><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"
+                                        fill="none">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M9.98686 0C12.7201 8.83049 11.1695 7.2799 20 9.98686C11.1695 12.7201 12.7201 11.1695 9.98686 20C7.2799 11.1695 8.83049 12.7201 2.50637e-06 9.98686C8.83049 7.2799 7.2799 8.83049 9.98686 0ZM4.44153 16.5046C4.17871 15.6636 4.3364 15.8213 3.4954 15.5585C4.3364 15.2957 4.17871 15.4534 4.44153 14.6124C4.70434 15.4534 4.54665 15.2957 5.38765 15.5585C4.54665 15.8213 4.70434 15.6636 4.44153 16.5046ZM1.73456 16.5046C2.20762 18.0552 1.94481 17.7661 3.4954 18.2392C1.94481 18.7122 2.20762 18.4494 1.73456 20C1.2615 18.4494 1.55059 18.7122 2.50637e-06 18.2392C1.55059 17.7661 1.2615 18.0552 1.73456 16.5046ZM16.7937 0C17.661 2.83837 17.1616 2.33903 20 3.20631C17.1616 4.07359 17.661 3.60053 16.7937 6.4389C15.9001 3.60053 16.3995 4.07359 13.5611 3.20631C16.3995 2.33903 15.9001 2.83837 16.7937 0Z"
+                                            fill="#35B882" />
+                                        <path
+                                            d="M5.7293 4.67806C4.17871 4.20499 4.44152 4.49409 3.96846 2.9435C3.4954 4.49409 3.78449 4.20499 2.2339 4.67806C3.78449 5.15112 3.4954 4.88831 3.96846 6.4389C4.44152 4.88831 4.17871 5.15112 5.7293 4.67806Z"
+                                            fill="#FDA41B" />
+                                        <path
+                                            d="M15.4534 15.5585C16.2943 15.8213 16.1367 15.6636 16.3995 16.5046C16.6623 15.6636 16.5046 15.8213 17.3456 15.5585C16.5046 15.2957 16.6623 15.4534 16.3995 14.6124C16.1367 15.4534 16.2943 15.2957 15.4534 15.5585Z"
+                                            fill="#FDA41B" />
+                                    </svg>Matches Found</span>
+                            </div>
+                            <span class="step-two__title"><span>Congratulations!</span></span>
+                            <span class="step-two__title">Your personalized moving estimate is ready.<span> Secure it
+                                    now.</span></span>
+                            <span class="step-two__text">Remember to review your estimate and compare quotes. These are
+                                no-obligation offers. Speaking to an agent could save you
+                                <span>up to 40%</span> </span>
+                            <div class="names-block">
+                                <label class="first-name-label" for="first-name">
+                                    <input class="first-name" type="text" id="first-name" placeholder="First Name"
+                                        required>
+                                </label>
+                                <label class="last-name-label" for="last-name">
+                                    <input class="last-name" type="text" id="last-name" placeholder="Last Name"
+                                        required>
+                                </label>
+                            </div>
+                            <label class="phone-code-label" for="phone-code">
+                                <input class="phone-code" type="text" id="phone-code" placeholder="Phone Number"
+                                    required>
+                            </label>
+                            <div id="step-fifth-btn" class="step-two__btn invalid-btn">get your quote<span
+                                    class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="step-two__description"><svg xmlns="http://www.w3.org/2000/svg" width="50"
+                                    height="50" viewBox="0 0 50 50" fill="none">
+                                    <g clip-path="url(#clip0_65_15054)">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M24.9672 0C31.8003 22.0762 27.9238 18.1997 50 24.9671C27.9238 31.8003 31.8003 27.9238 24.9672 50C18.1997 27.9238 22.0762 31.8003 6.26593e-06 24.9671C22.0762 18.1997 18.1997 22.0762 24.9672 0ZM11.1038 41.2615C10.4468 39.159 10.841 39.5532 8.73851 38.8962C10.841 38.2392 10.4468 38.6334 11.1038 36.5309C11.7608 38.6334 11.3666 38.2392 13.4691 38.8962C11.3666 39.5532 11.7608 39.159 11.1038 41.2615ZM4.33641 41.2615C5.51906 45.138 4.86203 44.4152 8.73851 45.5979C4.86203 46.7805 5.51906 46.1235 4.33641 50C3.15375 46.1235 3.87648 46.7805 6.26593e-06 45.5979C3.87648 44.4152 3.15375 45.138 4.33641 41.2615ZM41.9842 0C44.1524 7.09593 42.9041 5.84757 50 8.01577C42.9041 10.184 44.1524 9.00131 41.9842 16.0972C39.7503 9.00131 40.9987 10.184 33.9028 8.01577C40.9987 5.84757 39.7503 7.09593 41.9842 0Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M14.3233 11.6951C10.4468 10.5125 11.1038 11.2352 9.92116 7.35874C8.7385 11.2352 9.46124 10.5125 5.58476 11.6951C9.46124 12.8778 8.7385 12.2208 9.92116 16.0972C11.1038 12.2208 10.4468 12.8778 14.3233 11.6951Z"
+                                            fill="#41518B" />
+                                        <path
+                                            d="M38.6334 38.8962C40.7359 39.5532 40.3417 39.159 40.9987 41.2615C41.6557 39.159 41.2615 39.5532 43.364 38.8962C41.2615 38.2392 41.6557 38.6334 40.9987 36.5309C40.3417 38.6334 40.7359 38.2392 38.6334 38.8962Z"
+                                            fill="#41518B" />
+                                    </g>
+                                    <defs>
+                                        <clipPath id="clip0_65_15054">
+                                            <rect width="50" height="50" fill="white" />
+                                        </clipPath>
+                                    </defs>
+                                </svg>We’ve identified some potential savings & discounts for you based on the location
+                                you
+                                provided.</span>
+                        </div>
+                        <div id="step-sixth" class="step-two steps step-sixth" hidden>
+                            <h3>Your Quotes are waiting for you!</h3>
+                            <span>My Long Distance Movers brings the movers directly to you! We’ll find the top moving
+                                companies for your needs and have
+                                them call you right away. Search no more. Just sit back and relax!
+                            </span>
+                            <div type="button" data-close id="step-sixth-btn"
+                                class="popup__close step-two__btn valid-bt">
+                                thank you
+                            </div>
+                        </div>
+
+
+
+
+
+                        <!-- <div id="step-one" class="step-block-one step-block">
+                            <h3 class="form-calculator__title">Moving Cost Calculator</h3>
+                            <label class="form-calculator__zipe-code" for="zipe-code">
+                                <span>Where Are Your Moving From?</span>
+                                <span class="input-zip-error">
+                                    <img src="./src/img/error-zip.svg" alt="img">
+                                    <span>Zip Code
+                                        should contain 5
+                                        digits</span>
+                                </span>
+                                <input class=" " type="text" id="zipe-code" name="name" placeholder="Moving From Zip Code"
+                                    required>
+                            </label>
+                            <div id="btn-step-one" class="btn-zipe-code call-component-btn disable-click">
+                                <span>estimate my moving</span>
+                                <span class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="requested-text">1, 765 people requested an estimate!</span>
+                        </div> -->
+                        <!-- <div id="step-two" class="step-block-two step-block" hidden>
+                            <h3 class="form-calculator__title">Moving Cost Calculator</h3>
+                            <div class="step-block__items">
+                                <h4>Where Are Your Moving To?</h4>
+                                <div class="selects-block">
                                     <select name="form[]" data-class-modif="form">
-                                        <option value="1" selected>Select Home Size</option>
-                                        <option value="2">1 Bedroom Apartment</option>
-                                        <option value="3">1 Bedroom House</option>
-                                        <option value="4">2 Bedrooms Apartment</option>
-                                        <option value="5">2 Bedrooms House</option>
-                                        <option value="6">3 Bedrooms Apartment</option>
-                                        <option value="7">3 Bedrooms House</option>
-                                        <option value="8">4 Bedrooms Apartment</option>
-                                        <option value="9">4 Bedrooms House</option>
-                                        <option value="19">4 Bedrooms +</option>
+                                        <option value="1" selected>Select State1</option>
+                                        <option value="2">Absarokee, MT</option>
+                                        <option value="3">Acton, MT</option>
+                                        <option value="4">Ashland, MT</option>
+                                        <option value="5">Ballantine, MT</option>
+                                        <option value="6">Ballantine, MT</option>
+                                        <option value="7">Ballantine, MT</option>
+                                        <option value="8">Ballantine, MT</option>
+                                        <option value="9">Ballantine, MT</option>
+                                        <option value="10">Ballantine, MT</option>
+                                        <option value="11">Ballantine, MT</option>
+                                        <option value="12">Ballantine, MT</option>
+                                        <option value="13">Ballantine, MT</option>
+                                        <option value="14">Ballantine, MT</option>
+                                    </select>
+                                    <select name="form[]" data-class-modif="form">
+                                        <option value="1" selected>Select City</option>
+                                        <option value="2">Absarokee, MT</option>
+                                        <option value="3">Acton, MT</option>
+                                        <option value="4">Ashland, MT</option>
+                                        <option value="5">Ballantine, MT</option>
+                                        <option value="6">Ballantine, MT</option>
+                                        <option value="7">Ballantine, MT</option>
+                                        <option value="8">Ballantine, MT</option>
+                                        <option value="9">Ballantine, MT</option>
+                                        <option value="10">Ballantine, MT</option>
+                                        <option value="11">Ballantine, MT</option>
+                                        <option value="12">Ballantine, MT</option>
+                                        <option value="13">Ballantine, MT</option>
+                                        <option value="14">Ballantine, MT</option>
                                     </select>
                                 </div>
                             </div>
-                        </div>
-                        <div id="btn-step-three"
-                            class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click ">
-                            <span>estimate my moving</span>
-                            <span class="_icon-big-arrow-right"></span>
-                        </div>
-                        <span class="requested-text">1, 765 people requested an estimate!</span>
-                    </div>
-
-
-                    <div id="step-four" hidden>
-                        <div class="step-block-four step-block">
+                            <div id="btn-step-two" class="btn-zipe-code call-component-btn  disable-click">
+                                <span>estimate my moving</span>
+                                <span class="_icon-big-arrow-right"></span>
+                            </div>
+                            <span class="requested-text">1, 765 people requested an estimate!</span>
+                        </div> -->
+                        <!-- <div id="step-three" class="step-block-three step-block" hidden>
                             <h3 class="form-calculator__title">Moving Cost Calculator</h3>
-                            <h4>SEARCHING FOR MOVERS…</h4>
-                            <img src="./src/img/car-loading.gif" alt="img">
-                        </div>
-                    </div>
-
-
-                    <div id="step-fifth" hidden>
-                        <div class="step-block-fifth step-block">
-                            <h3 class="form-calculator__title">Enter your information</h3>
-                            <h4>Almost done! Enter your information to view your quote.</h4>
-                            <label class="form-calculator__zipe-code" for="name-code">
-                                <span class="input-zip-error name-code-error" hidden>
-                                    <img src="./src/img/error-zip.svg" alt="img">
-                                    <span>Name Code
-                                        is wrong</span>
-                                </span>
-                                <input class="input-not-ok " type="text" id="name-code" name="name"
-                                    placeholder="Enter your Name" required>
-                            </label>
-                            <label class="form-calculator__zipe-code" for="phone-code">
-                                <span class="input-zip-error phone-code-error" hidden>
-                                    <img src="./src/img/error-zip.svg" alt="img">
-                                    <span>Mobile Code
-                                        is wrong</span>
-                                </span>
-                                <input class="input-not-ok " type="text" id="phone-code" name="name"
-                                    placeholder="Enter your Mobile" required>
-                            </label>
-                            <label class="form-calculator__zipe-code" for="mail-code">
-                                <span class="input-zip-error mail-code-error" hidden>
-                                    <img src="./src/img/error-zip.svg" alt="img">
-                                    <span>Email Code
-                                        is wrong</span>
-                                </span>
-                                <input class="input-not-ok " type="text" id="mail-code" name="name"
-                                    placeholder="Enter your Email" required>
-                            </label>
-                            <div id="btn-step-fifth"
-                                class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click">
-                                <span class="btn-next">NEXT</span>
-                                <span class="btn-ok" hidden>ESTIMATE MY MOVING</span>
+                            <div class="step-block__items">
+                                <div class="selects-block">
+                                    <div class="selects-block__item">
+                                        <h4>When is Your Move?</h4>
+                                        <input id="picer" readonly type="text" class="data-datepicker select__title "
+                                            placeholder="select a date" data-datepicker>
+                                    </div>
+                                    <div class="selects-block__item">
+                                        <h4>How Large is Your Move?</h4>
+                                        <select name="form[]" data-class-modif="form">
+                                            <option value="1" selected>Select Home Size</option>
+                                            <option value="2">1 Bedroom Apartment</option>
+                                            <option value="3">1 Bedroom House</option>
+                                            <option value="4">2 Bedrooms Apartment</option>
+                                            <option value="5">2 Bedrooms House</option>
+                                            <option value="6">3 Bedrooms Apartment</option>
+                                            <option value="7">3 Bedrooms House</option>
+                                            <option value="8">4 Bedrooms Apartment</option>
+                                            <option value="9">4 Bedrooms House</option>
+                                            <option value="19">4 Bedrooms +</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="btn-step-three"
+                                class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click ">
+                                <span>estimate my moving</span>
                                 <span class="_icon-big-arrow-right"></span>
                             </div>
-                            <span class="requested-text">Your information is safe with us. By using this service, you
-                                agree to receive email communications solely regarding your
-                                relocation process</span>
-                        </div>
-                    </div>
-
-                    <div id="step-sixfh" hidden>
-                        <div class="step-block-sixfh step-block">
-                            <h3 class="form-calculator__title">Your Quotes are waiting for you!</h3>
-                            <p>My Long Distance Movers brings the movers directly to you! We’ll find the top moving
-                                companies for your needs and have
-                                them call you right away. Search no more. Just sit back and relax!</p>
-
-
-                            <span class="form__price">$1450 - $1850</span>
-                            <p>This is your estimated moving cost. Professional movers will contact you within business
-                                day.</p>
-                            <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
-                                <span class="btn-next">THANK YOU</span>
-
-                                <span class="_icon-big-arrow-right"></span>
+                            <span class="requested-text">1, 765 people requested an estimate!</span>
+                        </div> -->
+                        <!-- <div id="step-four" hidden>
+                            <div class="step-block-four step-block">
+                                <h3 class="form-calculator__title">Moving Cost Calculator</h3>
+                                <h4>SEARCHING FOR MOVERS…</h4>
+                                <img src="./src/img/car-loading.gif" alt="img">
                             </div>
-                            <span class="requested-text">Your information is safe with us. By using this service, you
-                                agree to receive email communications solely regarding your
-                                relocation process</span>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </section>
+                        </div> -->
+                        <!-- <div id="step-fifth" hidden>
+                            <div class="step-block-fifth step-block">
+                                <h3 class="form-calculator__title">Enter your information</h3>
+                                <h4>Almost done! Enter your information to view your quote.</h4>
+                                <label class="form-calculator__zipe-code" for="name-code">
+                                    <span class="input-zip-error name-code-error" hidden>
+                                        <img src="./src/img/error-zip.svg" alt="img">
+                                        <span>Name Code
+                                            is wrong</span>
+                                    </span>
+                                    <input class="input-not-ok " type="text" id="name-code" name="name"
+                                        placeholder="Enter your Name" required>
+                                </label>
+                                <label class="form-calculator__zipe-code" for="phone-code">
+                                    <span class="input-zip-error phone-code-error" hidden>
+                                        <img src="./src/img/error-zip.svg" alt="img">
+                                        <span>Mobile Code
+                                            is wrong</span>
+                                    </span>
+                                    <input class="input-not-ok " type="text" id="phone-code" name="name"
+                                        placeholder="Enter your Mobile" required>
+                                </label>
+                                <label class="form-calculator__zipe-code" for="mail-code">
+                                    <span class="input-zip-error mail-code-error" hidden>
+                                        <img src="./src/img/error-zip.svg" alt="img">
+                                        <span>Email Code
+                                            is wrong</span>
+                                    </span>
+                                    <input class="input-not-ok " type="text" id="mail-code" name="name"
+                                        placeholder="Enter your Email" required>
+                                </label>
+                                <div id="btn-step-fifth"
+                                    class="btn-zipe-code call-component-btn btn-zipe-code-ok disable-click">
+                                    <span class="btn-next">NEXT</span>
+                                    <span class="btn-ok" hidden>ESTIMATE MY MOVING</span>
+                                    <span class="_icon-big-arrow-right"></span>
+                                </div>
+                                <span class="requested-text">Your information is safe with us. By using this service, you
+                                    agree to receive email communications solely regarding your
+                                    relocation process</span>
+                            </div>
+                        </div> -->
+                        <!-- <div id="step-sixfh" hidden>
+                            <div class="step-block-sixfh step-block">
+                                <h3 class="form-calculator__title">Your Quotes are waiting for you!</h3>
+                                <p>My Long Distance Movers brings the movers directly to you! We’ll find the top moving
+                                    companies for your needs and have
+                                    them call you right away. Search no more. Just sit back and relax!</p>
+                                <span class="form__price">$1450 - $1850</span>
+                                <p>This is your estimated moving cost. Professional movers will contact you within business
+                                    day.</p>
+                                <div class="btn-zipe-code call-component-btn btn-zipe-code-ok">
+                                    <span class="btn-next">THANK YOU</span>
+                                    <span class="_icon-big-arrow-right"></span>
+                                </div>
+                                <span class="requested-text">Your information is safe with us. By using this service, you
+                                    agree to receive email communications solely regarding your
+                                    relocation process</span>
+                            </div>
+                        </div> -->
+                    </form>
+                </div>
+            </section>
+        </div>
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <MovingTips srcpars="src/html/layout//MovingTips.html" />
         <section class="top-choice">
             <div class="top-choice__container">
                 <h2 class="top-choice__title">Our Tope Choice</h2>
-                <article class="choises__card midland">
+                <article class="choises__card midland" data-popup="#popup">
                     <span class="mark-choice"><span>top choice</span></span>
                     <div class="choises__card-logo-container">
                         <img src="./src/img/midland.png" alt="img">
+                        <div class="content-container-forth"></div>
                     </div>
-                    <div class="choises__card-info-block" data-da=".first-navnav,1000,1">
-                        <h2 class="choises__card-info-block-title">Midland Van Lines</h2>
+                    <div class="choises__card-info-block">
+                        <h2 class="choises__card-info-block-title" data-da=".content-container-forth,1000,0">Midland Van
+                            Lines</h2>
                         <ul class="choises__card-info-list">
                             <li class="choises__card-info-item">
                                 <span class="choises__card-item-icon _icon-ok"></span>
@@ -410,11 +732,11 @@
                         </ul>
                     </div>
                     <div class="choises__card-nav-block first-navnav">
-                        <div class="rating-block">
+                        <div class="rating-block" data-da=".content-container-forth,1000,1">
                             <span class="rating-block__number first-nav-rating-">9.9</span>
                             <span class="rating-block__value">
                                 <span class="rating-block__label">outstanding</span>
-                                <span class="rating-block__stars" data-da=".first-nav-rating-,871,2">
+                                <span class="rating-block__stars">
                                     <div class="rating-user">
                                         <span class="icon-users"></span>
                                     </div>
@@ -432,8 +754,22 @@
         <DecorLine srcpars="src/html/components/DecorLine.html" />
         <Spoller srcpars="src/html/components/Spoller.html" />
         <Footer srcpars="src/html/layout/Footer.html" />
+
+
+    </div>
+    <div id="popup" aria-hidden="true" class="popup">
+        <div class="popup__wrapper">
+            <div class="popup__content">
+                <!-- <button data-close type="button" class="popup__close">Закрити</button> -->
+                <div class="popup__imgblock">
+                    <div class="popup__text">
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="module" src="./src/js/main.js"></script>
+
 </body>
 
 </html>

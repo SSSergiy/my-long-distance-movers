@@ -2,7 +2,7 @@
     max-height: 789px;
     min-height: 417px;
     color: #FFF;
-    background-color: #0A0A3F;
+    background-color: var(--color-footer-bg);
     padding-top: 40px;
     @include adaptiveValue("padding-bottom", 40, 32);
 

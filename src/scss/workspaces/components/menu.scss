@@ -26,7 +26,7 @@
             .menu-open & {
 
                 left: 0;
-                background: wheat;
+                background: #a29b8e;
                 left: 0;
                 z-index: 1;
 
@@ -75,7 +75,7 @@
             position: absolute;
             width: 100%;
             height: toRem(3);
-            background-image: url("./src/img/line.svg");
+            background-image: url("./src/img/line-header.svg");
 
         }
 

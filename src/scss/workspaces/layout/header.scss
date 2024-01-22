@@ -4,6 +4,8 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
+    background-color:var(--color-footer-bg);
+   
 
     .__container {
         display: flex;
@@ -44,7 +46,7 @@
         a {
             @include adaptiveValue("font-size", 20, 16);
             font-weight: 500;
-            color: #004B70;
+            color: #FFFFFF;
             line-height: normal;
         }
     }

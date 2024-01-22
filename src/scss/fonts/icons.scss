@@ -80,8 +80,6 @@
     display: inline-block;
     vertical-align: top;
     position: relative;
-  //width: 100px;
-//   border: 1px solid red;
 
     .icon-users {
         font-size: 0;
@@ -92,13 +90,21 @@
         position: relative;
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        background-image: -webkit-linear-gradient(left, #F5CF3F, #F5CF3F 70%, #FCF8D9 70%, #FCF8D9 100%);
+        background-image: -webkit-linear-gradient(left, #F5CF3F, #F5CF3F 90%, #FCF8D9 90%, #FCF8D9 100%);
 
         &:before {
             content: "\e90d \e90d \e90d \e90d \e90d";
             font-size: 40px;
             line-height: 1;
             font-family: "icons";
+              @media (360px <=width <=1000px) {
+        & {
+            font-size: 14px;
+            letter-spacing: 6px;
+
+        }
+    }
+            
         }
     }
 }

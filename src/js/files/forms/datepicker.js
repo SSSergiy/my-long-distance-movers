@@ -1,19 +1,14 @@
-/* Календар */
-
-// Підключення функціоналу "Чертоги Фрілансера"
-// Підключення списку активних модулів
+import datepicker from 'js-datepicker';
 import { flsModules } from "../modules.js";
 
-// Підключення модуля
-import datepicker from 'js-datepicker';
-
 if (document.querySelector('[data-datepicker]')) {
-	const picker = datepicker('[data-datepicker]', {
-		customDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
-		customMonths: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-		overlayButton: 'Застосувати',
-		overlayPlaceholder: 'Рік (4 цифри)',
-		startDay: 1,
+    const picker = datepicker('[data-datepicker]', {
+        customDays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
+        customMonths: ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        overlayButton: 'to apply',
+        overlayPlaceholder: 'year (four digits)',
+        startDay: 1,
+        showAllDates: true,
         formatter: (input, date, instance) => {
             const day = date.getDate().toString().padStart(2, '0');
             const month = (date.getMonth() + 1).toString().padStart(2, '0');
@@ -23,13 +18,9 @@ if (document.querySelector('[data-datepicker]')) {
 
             input.value = formattedDate;
         },
-		// formatter: (input, date, instance) => {
-		// 	const value = date.toLocaleDateString()
-		// 	input.value = value
-		// },
-		onSelect: function (input, instance, date) {
-
-		}
-	});
-	flsModules.datepicker = picker;
+        onSelect: function (input, instance, date) {
+            // Обробник вибору дати
+        }
+    });
+    flsModules.datepicker = picker;
 }

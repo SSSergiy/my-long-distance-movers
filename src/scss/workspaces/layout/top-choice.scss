@@ -32,6 +32,12 @@
 
                 }
             }
+                @media (360px <=width <=1000px) {
+                & {
+                    flex-direction:column;
+
+                }
+            }
 
             @media (360px <=width <=871px) {
                 & {
@@ -136,7 +142,7 @@
             width: 60%;
             padding-right: 8px;
 
-            @media (360px <=width <=630px) {
+            @media (360px <=width <=1000px) {
                 & {
                     width: 100%;
                     margin-bottom: 14px;
