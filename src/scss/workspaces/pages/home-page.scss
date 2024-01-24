@@ -685,9 +685,18 @@
     @media (360px <=width <=767px) {
         & {
             width: 116% !important;
+            
 
         }
     }
+      @media (445px <=width <=767px) {
+        & {
+            width: 100% !important;
+            
+
+      
+}}
+    
 }
 
 

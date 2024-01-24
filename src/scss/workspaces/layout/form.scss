@@ -209,6 +209,12 @@
         font-family: "Poppins";
         font-size: 16px;
         font-weight: 400;
+        width:220px;
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        text-align:center;
+
 
         @media (360px <=width <=767px) {
             & {
@@ -292,7 +298,7 @@
 
         width: 90%;
 
-        padding: 0 20px;
+        padding: 1px 20px;
         border-radius: 10px;
         border: 1px solid #C6CBDC;
         background: #FFF;
@@ -621,7 +627,7 @@
         border-radius: 4px;
 
         background: #35B882;
-        @include adaptiveValue("width", 710, 120);
+        @include adaptiveValue("width", 620, 40);
 
 
     }
@@ -746,4 +752,19 @@
 .section-form-block {
     margin-bottom: 89px;
     @include adaptiveValue("margin-bottom", 89, 60);
+}
+#step-fourth-input-to-error{
+    padding-left: 0;
+    padding-top: 10px;
+}
+#step-fifth-input-first-name-error{
+    padding-left: 0;
+    padding-top: 5px;
+    padding-bottom:5px ;
+}
+#step-fifth-input-phone-error{
+    padding-left: 0;
+    padding-top: 20px;
+    padding-bottom:5px ;
+
 }
