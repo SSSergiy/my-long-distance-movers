@@ -247,9 +247,60 @@ import "./libs/dynamic_adapt.js";
 /* Підключаємо файли зі своїм кодом */
 //============================================================================================================================================================================================================================================
 import flatpickr from "flatpickr";
-
 var stateForm = {};
-
+var popupState = '';
+function handleAriaHiddenChange(mutationsList, observer) {
+    for (const mutation of mutationsList) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'aria-hidden') {
+            var isHidden = document.getElementById('popup').getAttribute('aria-hidden') === 'true';
+            popupState = isHidden
+            if (isHidden) {
+                stateForm = {};
+                console.log('cloze-popup popupState === true');
+                var fromErrorMesage = document.getElementById('step-two-input-from-error')
+                fromErrorMesage.innerText = "Zip Code should contain 5 digits"
+                fromErrorMesage.hidden = true;
+                document.getElementById('step-two-input-from-block').classList.remove('error-block')
+                var toErrorMesage = document.getElementById('step-two-input-to-error')
+                toErrorMesage.innerText = "Zip Code should contain 5 digits"
+                toErrorMesage.hidden = true;
+                document.getElementById('step-two-input-to-block').classList.remove('error-block')
+                document.getElementById('step-three-input-from-error').hidden = true
+                document.getElementById('pickerID').classList.remove('error-block');
+                document.getElementById('mail-code').classList.remove('error-block');
+                document.getElementById('step-fourth-input-to-error').innerHTML = 'Please enter a valid email address.';
+                document.getElementById('step-fourth-input-to-error').hidden = true;
+                document.getElementById('first-name').classList.remove('error-block');
+                document.getElementById('last-name').classList.remove('error-block');
+                document.getElementById('phone-code').classList.remove('error-block');
+                document.getElementById('step-fifth-input-first-name-error').hidden = true;
+                document.getElementById('step-fifth-input-phone-error').hidden = true;
+                document.getElementById('first-name').value = '';
+                document.getElementById('last-name').value = '';
+                document.getElementById('phone-code').value = '';
+                document.getElementById('mail-code').value = '';
+                document.getElementById('pickerID').value = '';
+                document.getElementById('step-two-input-to-rezult').textContent = ''
+                document.getElementById('step-two-input-from-rezult').textContent = '';
+                document.getElementById('step-two-input-from').value = '';
+                document.getElementById('step-two-input-to').value = '';
+                document.getElementById('step-one').hidden = false;
+                document.getElementById('step-two').hidden = true;
+                document.getElementById('step-three').hidden = true;
+                document.getElementById('step-fourth').hidden = true;
+                document.getElementById('step-fifth').hidden = true;
+                document.getElementById('step-sixth').hidden = true;
+                document.getElementById('step-two-input-svg-from').hidden = true;
+                document.getElementById('step-two-input-svg-to').hidden = true;
+            } else {
+                console.log('oppen-popup popupState === true');
+                console.log(popupState);
+            }
+        }
+    }
+}
+const observer = new MutationObserver(handleAriaHiddenChange);
+observer.observe(document.getElementById('popup'), { attributes: true });
 (function () {
     function isElementInViewport(el) {
         var rect = el.getBoundingClientRect();
@@ -289,7 +340,6 @@ var stateForm = {};
 (function () {
     var roomList = document.getElementById('step-one-list');
     var listItems = roomList.getElementsByTagName('li');
-
     Array.from(listItems).forEach(function (listItem) {
         listItem.addEventListener('click', function () {
             stateForm["rooms"] = this.textContent;
@@ -298,29 +348,24 @@ var stateForm = {};
         });
     });
 })()
-
 function isValideZipe(number) {
     var zipeRegex = /^\d{5}$/;
     return zipeRegex.test(number);
 }
-
 function lookupPostalCodeFrom() {
     var postalCodeInput = document.getElementById('step-two-input-from');
     var resultDiv = document.getElementById('step-two-input-from-rezult');
     document.getElementById('step-two-input-svg-from').hidden = true;
     resultDiv.textContent = "";
-
     var postalCode = postalCodeInput.value.trim();
     if (isValideZipe(postalCode)) {
         document.getElementById('step-two-input-svg-from').hidden = false;
         document.getElementById('step-two-input-from-error').hidden = true;
         document.getElementById('step-two-input-from-block').classList.remove('error-block')
-
         if (!postalCode) {
             resultDiv.textContent = "";
             return;
         }
-
         var apiKey = "ee80d316104c43e8841e90df830a504e";
         var endpoint = `https://api.opencagedata.com/geocode/v1/json?q=${postalCode}&key=${apiKey}&language=en&countrycode=us`;
         fetch(endpoint).then(response => response.json()).then(data => {
@@ -331,7 +376,6 @@ function lookupPostalCodeFrom() {
                 var city = components?.city;
                 var town = components?.town;
                 var region = components?.state_code;
-
                 var locationInfo = city || town || county;
                 console.dir(components);
                 resultDiv.textContent = `${locationInfo}, ${region}`;
@@ -349,14 +393,13 @@ function lookupPostalCodeFrom() {
         document.getElementById('step-two-input-svg-from').hidden = true;
         document.getElementById('step-two-input-from-block').classList.add('error-block')
         document.getElementById('step-two-input-from-error').hidden = false;
+        document.getElementById('step-two-input-from-error').innerText = "Zip Code should contain 5 digits"
     }
 }
 document.getElementById('step-two-input-from').addEventListener('input', lookupPostalCodeFrom);
-
 function lookupPostalCodeTo() {
     var postalCodeInput = document.getElementById('step-two-input-to');
     var resultDiv = document.getElementById('step-two-input-to-rezult');
-
     var postalCode = postalCodeInput.value.trim();
     document.getElementById('step-two-input-svg-to').hidden = true;
     resultDiv.textContent = "";
@@ -369,9 +412,7 @@ function lookupPostalCodeTo() {
             return;
         }
         var apiKey = "ee80d316104c43e8841e90df830a504e";
-
         var endpoint = `https://api.opencagedata.com/geocode/v1/json?q=${postalCode}&key=${apiKey}&language=en&countrycode=us`;
-
         fetch(endpoint).then(response => response.json()).then(data => {
             console.log(data.results)
             if (data.results && data.results.length > 0) {
@@ -383,7 +424,6 @@ function lookupPostalCodeTo() {
                 var region = components?.state_code;
                 var locationInfo = city || town || county;
                 console.dir(components);
-
                 resultDiv.textContent = `${locationInfo}, ${region}`;
             } else {
                 resultDiv.textContent = "Location not found";
@@ -399,91 +439,114 @@ function lookupPostalCodeTo() {
         document.getElementById('step-two-input-svg-to').hidden = true;
         document.getElementById('step-two-input-to-error').hidden = false;
         document.getElementById('step-two-input-to-block').classList.add('error-block')
+        document.getElementById('step-two-input-to-error').innerText = "Zip Code should contain 5 digits"
     }
 }
 document.getElementById('step-two-input-to').addEventListener('input', lookupPostalCodeTo);
-
 function updateButtonState() {
     var btnTwo = document.getElementById('step-two-btn');
     var errorFrom = document.getElementById('step-two-input-from-block');
     var errorTo = document.getElementById('step-two-input-to-block');
     var resultDivFrom = document.getElementById('step-two-input-from');
     var resultDivTo = document.getElementById('step-two-input-to');
+    var zipFromError = document.getElementById('step-two-input-from-error');
+    var zipToError = document.getElementById('step-two-input-to-error');
     btnTwo.classList.add("invalid-btn");
-
     if (resultDivTo.value && resultDivFrom.value &&
         !errorTo.classList.contains("error-block") &&
         !errorFrom.classList.contains("error-block")
     ) {
         btnTwo.classList.remove("invalid-btn");
         btnTwo.classList.add("valid-btn");
+    } else if (resultDivFrom.value === "") {
+        zipFromError.innerText = 'the "From" field must not be empty'
+    } else if (resultDivTo.value === "") {
+        zipToError.innerText = 'the "To" field must not be empty'
     } else {
         btnTwo.classList.add("invalid-btn");
     }
 }
 var inputFrom = document.getElementById('step-two-input-from')
 var inputTo = document.getElementById('step-two-input-to')
-
 inputFrom.addEventListener('input', updateButtonState);
 inputTo.addEventListener('input', updateButtonState);
 updateButtonState();
-
 document.getElementById('step-two-btn').addEventListener('click', function () {
-    stateForm["indexFrom"] = inputFrom.value;
-    stateForm["stateFrom"] = document.getElementById('step-two-input-from-rezult').textContent;
-    stateForm["indexTo"] = inputTo.value;
-    stateForm["stateTo"] = document.getElementById('step-two-input-to-rezult').textContent;
-    document.getElementById('step-two-input-to-rezult').textContent = ''
-    document.getElementById('step-two-input-from-rezult').textContent = ''
-    inputFrom.value = '';
-    inputTo.value = '';
-    document.getElementById('step-two').hidden = true;
-    document.getElementById('step-three').hidden = false;
-    console.log(stateForm);
-    document.getElementById('step-two-input-svg-from').hidden = true;
-    document.getElementById('step-two-input-svg-to').hidden = true;
-    document.getElementById('step-two-btn').classList.add("invalid-btn");
+    var fromErrorMesage = document.getElementById('step-two-input-from-error')
+    fromErrorMesage.innerText = "Zip Code should contain 5 digits"
+    if (inputFrom.value === '') {
+        document.getElementById('step-two-input-from-error').hidden = false;
+        fromErrorMesage.innerText = 'the "From" field must not be empty'
+        document.getElementById('step-two-input-from-block').classList.add('error-block')
+    } else if (inputTo.value === '') {
+        document.getElementById('step-two-input-to-error').hidden = false;
+        document.getElementById('step-two-input-to-error').innerText = 'the "To" field must not be empty'
+        document.getElementById('step-two-input-to-block').classList.add('error-block')
+    } else if (document.getElementById('step-two-btn').classList.contains('valid-btn')) {
+        fromErrorMesage.innerText = "Zip Code should contain 5 digits";
+        fromErrorMesage.hidden = true;
+        stateForm["indexFrom"] = inputFrom.value;
+        stateForm["stateFrom"] = document.getElementById('step-two-input-from-rezult').textContent;
+        stateForm["indexTo"] = inputTo.value;
+        stateForm["stateTo"] = document.getElementById('step-two-input-to-rezult').textContent;
+        document.getElementById('step-two-input-to-rezult').textContent = ''
+        document.getElementById('step-two-input-from-rezult').textContent = ''
+        inputFrom.value = '';
+        inputTo.value = '';
+        document.getElementById('step-two').hidden = true;
+        document.getElementById('step-three').hidden = false;
+        console.log(stateForm);
+        document.getElementById('step-two-input-svg-from').hidden = true;
+        document.getElementById('step-two-input-svg-to').hidden = true;
+        document.getElementById('step-two-btn').classList.add("invalid-btn");
+    }
 });
-
 (function () {
     var picker = document.getElementById('pickerID');
     var ThreeBtn = document.getElementById('step-three-btn');
-
     function updateButtonClass() {
         ThreeBtn.classList.remove('invalid-btn', 'valid-btn');
-
         if (picker.value) {
             ThreeBtn.classList.add('valid-btn');
         } else {
             ThreeBtn.classList.add('invalid-btn');
         }
     }
-
     picker.addEventListener('input', updateButtonClass);
-
     updateButtonClass();
 }
 )()
-
-document.getElementById('step-three-btn').addEventListener('click', () => {
-    stateForm["dataFiled"] = document.getElementById('pickerID').value;
-    document.getElementById('pickerID').value = '';
-    document.getElementById('step-three').hidden = true;
-    document.getElementById('step-fourth').hidden = false;
-    document.getElementById('step-three-btn').classList.add('invalid-btn');
-    console.log(stateForm);
-
+document.getElementById('pickerID').addEventListener('input', () => {
+    var errorData = document.getElementById('step-three-input-from-error')
+    if (document.getElementById('pickerID').value) {
+        errorData.hidden = true;
+        document.getElementById('pickerID').classList.remove('error-block');
+    }
 })
-
+document.getElementById('step-three-btn').addEventListener('click', () => {
+    var errorData = document.getElementById('step-three-input-from-error')
+    var pickerID = document.getElementById('pickerID')
+    console.log(pickerID.value)
+    if (!pickerID.value) {
+        errorData.hidden = false;
+        pickerID.classList.add('error-block');
+    } else {
+        stateForm["dataFiled"] = document.getElementById('pickerID').value;
+        document.getElementById('pickerID').value = '';
+        document.getElementById('step-three').hidden = true;
+        document.getElementById('step-fourth').hidden = false;
+        document.getElementById('step-three-btn').classList.add('invalid-btn');
+        console.log(stateForm);
+    }
+})
 function isValidEmail(email) {
     var emailRegex = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$/;
     return emailRegex.test(email);
 }
 var mailCodeElement = document.getElementById('mail-code');
 var btnFourth = document.getElementById('step-fourth-btn');
-
 mailCodeElement.addEventListener('input', function (e) {
-
+    var errorMessage = document.getElementById('step-fourth-input-to-error');
     btnFourth.classList.remove('valid-btn');
     btnFourth.classList.add('invalid-btn');
     var inputValue = mailCodeElement.value;
@@ -491,154 +554,168 @@ mailCodeElement.addEventListener('input', function (e) {
         btnFourth.classList.remove('invalid-btn');
         btnFourth.classList.add('valid-btn');
         document.getElementById('step-fourth-input-to-error').hidden = true;
+        errorMessage.innerHTML = 'Please enter a valid email address.'
+        mailCodeElement.classList.remove('error-block');
+    } else if (inputValue === '') {
+        errorMessage.hidden = false;
+        errorMessage.innerHTML = "the email field must not be empty"
+        mailCodeElement.classList.add('error-block');
     } else {
-
+        errorMessage.innerHTML = 'Please enter a valid email address.'
         btnFourth.classList.remove('valid-btn');
         btnFourth.classList.add('invalid-btn');
-        document.getElementById('step-fourth-input-to-error').hidden = false;
+        errorMessage.hidden = false;
+        mailCodeElement.classList.add('error-block');
     }
-
 });
-
 function handleClick() {
-
-    stateForm["email"] = mailCodeElement.value;
-    mailCodeElement.value = '';
-    document.getElementById('step-fourth').hidden = true;
-    document.getElementById('step-fifth').hidden = false;
-    console.log(stateForm);
-    btnFourth.classList.add('invalid-btn');
+    var inputMail = document.getElementById('mail-code');
+    var errorMessage = document.getElementById('step-fourth-input-to-error');
+    if (inputMail.value === '') {
+        errorMessage.hidden = false;
+        errorMessage.innerHTML = "the email field must not be empty"
+        inputMail.classList.add('error-block')
+    } else {
+        errorMessage.innerHTML = 'Please enter a valid email address.'
+        stateForm["email"] = mailCodeElement.value;
+        mailCodeElement.value = '';
+        document.getElementById('step-fourth').hidden = true;
+        document.getElementById('step-fifth').hidden = false;
+        console.log(stateForm);
+        btnFourth.classList.add('invalid-btn');
+    }
 }
-
 btnFourth.addEventListener('click', handleClick);
 (function () {
     function isValidName(name) {
         var nameRegex = /^\p{L}{3,19}$/u;
         return nameRegex.test(name);
     }
-
-    function isValidPhoneNumber(phoneNumber) {
-         var valid = /^\(\d\d\d\)\s\d\d\d-\d\d\d\d$/gm.test(phoneNumber)
-         if(valid){
-            document.getElementById('step-fifth-input-phone-error').hidden = true;
-
-            return phoneNumber.length === 14;
-
-        }else{
-            document.getElementById('step-fifth-input-phone-error').hidden = false;
-            return null
-
-        }
-
-
-    }
-
     var nameCodeElement = document.getElementById('first-name');
     var nameCodeElementLast = document.getElementById('last-name');
     var inputt = document.getElementById('phone-code');
     var btnFifth = document.getElementById('step-fifth-btn');
     var btnSixth = document.getElementById('step-sixth');
-
-    nameCodeElement.addEventListener('input', function () {
-
-        checked();
-    });
-
-    nameCodeElementLast.addEventListener('input', function () {
-
-        checked();
-    });
-
-    inputt.addEventListener('input', function () {
-        formatPhoneNumber();
-        checked();
-    });
-
+    var lastLastError = document.getElementById('step-fifth-input-first-name-error');
+    var firstLastError = document.getElementById('step-fifth-input-first-name-error');
     function formatPhoneNumber() {
         var phoneNumber = inputt.value.replace(/\D/g, '');
-
         if (phoneNumber.length > 0) {
             var formattedNumber = '(' + phoneNumber.slice(0, 3) + ') ' + phoneNumber.slice(3, 6) + '-' + phoneNumber.slice(6, 10);
             inputt.value = formattedNumber;
-
-            if(/^\(\d\d\d\)\s\d\d\d-\d\d\d\d$/gm.test(inputt.value)!==true){
-
+            var phoneInput = document.getElementById('phone-code');
+            if (/^\(\d\d\d\)\s\d\d\d-\d\d\d\d$/gm.test(inputt.value) !== true) {
                 document.getElementById('step-fifth-input-phone-error').hidden = false;
-            }else{
-
+                phoneInput.classList.add('error-block');
+            } else {
+                phoneInput.classList.remove('error-block');
                 document.getElementById('step-fifth-input-phone-error').hidden = true;
             }
         }
     }
-
-    function checked() {
+    function checkedFirst() {
         var isFirstNameValid = isValidName(nameCodeElement.value);
-        var isLastNameValid = isValidName(nameCodeElementLast.value);
-        var isPhoneNumberValid = isValidPhoneNumber(inputt.value);
-        var errorMessage = document.getElementById('step-fifth-input-first-name-error')
-        var errorMessagePhone = document.getElementById('step-fifth-input-phone-error')
-
-        btnFifth.classList.remove('valid-btn');
-        btnFifth.classList.add('invalid-btn');
-        errorMessage.hidden = true;
-
-        // if(isFirstNameValid && isLastNameValid){
-        //     errorMessage.hidden = false;
-        // }
-
-        if (isFirstNameValid && isLastNameValid && isPhoneNumberValid) {
-            btnFifth.classList.remove('invalid-btn');
-            btnFifth.classList.add('valid-btn');
-            errorMessage.hidden = true;
-            errorMessagePhone.hidden = true;
-        } else if (isFirstNameValid === false) {
-
-            errorMessage.hidden = false;
-
-
-
-        } else if (isLastNameValid) {
-            errorMessage.hidden = true;
-
-
-
-        } else if (isLastNameValid === false) {
-            errorMessage.hidden = false;
-
-
-
-        } else if (isLastNameValid) {
-            errorMessage.hidden = true;
-
-
-
-        } else if (isPhoneNumberValid===false) {
-            errorMessagePhone.hidden = false;
-
-
+        var firstInput = document.getElementById('first-name');
+        if (isFirstNameValid) {
+            firstLastError.hidden = true;
+            firstInput.classList.remove('error-block');
         } else {
-            btnFifth.classList.remove('valid-btn');
-            btnFifth.classList.add('invalid-btn');
-            errorMessage.hidden = true;
-            errorMessagePhone.hidden = true;
-
+            firstLastError.hidden = false
+            firstLastError.innerText = 'the first name field must not contain numbers or symbols, only letters'
+            firstInput.classList.add('error-block')
         }
     }
+    function checkedLast() {
+        var isLastNameValid = isValidName(nameCodeElementLast.value);
+        var lastInput = document.getElementById('last-name');
+        if (isLastNameValid) {
+            lastLastError.hidden = true;
+            lastInput.classList.remove('error-block');
+        } else {
+            lastLastError.hidden = false
+            lastLastError.innerText = 'the last name field must not contain numbers or symbols, only letters'
+            lastInput.classList.add('error-block')
+        }
+    }
+    nameCodeElement.addEventListener('input', function () {
+        var checkHiddenNumber = document.getElementById('step-fifth-input-phone-error')
+        var checkHiddenNames = document.getElementById('step-fifth-input-first-name-error')
+        var checkPhoneValue = document.getElementById('phone-code')
+        var btnValided = document.getElementById('step-fifth-btn')
+        setTimeout(() => {
+            if (checkHiddenNumber.hidden && checkHiddenNames.hidden && checkPhoneValue.value.length >= 3) {
+                btnValided.classList.add('valid-btn')
+            } else {
+                btnValided.classList.remove('valid-btn')
+            }
+        })
+        checkedFirst();
+    });
+    nameCodeElementLast.addEventListener('input', function () {
+        var checkHiddenNumber = document.getElementById('step-fifth-input-phone-error')
+        var checkHiddenNames = document.getElementById('step-fifth-input-first-name-error')
+        var checkPhoneValue = document.getElementById('phone-code')
+        var btnValided = document.getElementById('step-fifth-btn')
+        setTimeout(() => {
+            if (checkHiddenNumber.hidden && checkHiddenNames.hidden && checkPhoneValue.value.length >= 3) {
+                btnValided.classList.add('valid-btn')
+            } else {
+                btnValided.classList.remove('valid-btn')
+            }
+        })
+        checkedLast();
+    });
+    inputt.addEventListener('input', function () {
+        var checkHiddenNumber = document.getElementById('step-fifth-input-phone-error')
+        var checkHiddenNames = document.getElementById('step-fifth-input-first-name-error')
+        var checkPhoneValue = document.getElementById('phone-code')
+        var btnValided = document.getElementById('step-fifth-btn')
+        setTimeout(() => {
+            if (checkHiddenNumber.hidden && checkHiddenNames.hidden && checkPhoneValue.value.length >= 3) {
+                btnValided.classList.add('valid-btn')
 
+            } else {
+                btnValided.classList.remove('valid-btn')
+            }
+        })
+        formatPhoneNumber();
+    });
     btnFifth.addEventListener('click', function () {
-        stateForm['firstName'] = nameCodeElement.value;
-        nameCodeElement.value = "";
-        stateForm['lastName'] = nameCodeElementLast.value;
-        nameCodeElementLast.value = '';
-        stateForm['PhoneNumber'] = inputt.value;
-        inputt.value = '';
-
-        document.getElementById('step-fifth').hidden = true;
-        document.getElementById('step-sixth').hidden = false;
-        console.log(stateForm);
+        var firstInput = document.getElementById('first-name');
+        var lastInput = document.getElementById('last-name');
+        var phoneInput = document.getElementById('phone-code');
+        var firstLastError = document.getElementById('step-fifth-input-first-name-error');
+        var errorPhone = document.getElementById('step-fifth-input-phone-error');
+        if (firstInput.value === '') {
+            firstLastError.hidden = false
+            firstLastError.innerText = 'The First Name field must not be empty'
+            firstInput.classList.add('error-block')
+        } else if (lastInput.value === '') {
+            firstLastError.hidden = false
+            firstLastError.innerText = 'The Last Name field must not be empty'
+            lastInput.classList.add('error-block')
+        } else if (phoneInput.value === '') {
+            phoneInput.classList.add('error-block')
+            errorPhone.hidden = false;
+            errorPhone.innerText = 'the phone number field must not be empty'
+        } else if (btnFifth.classList.contains("valid-btn")) {
+            firstLastError.innerText = 'the first name and last name field must not contain numbers.'
+            errorPhone.innerText = 'the phone number field must contain only numbers'
+            stateForm['firstName'] = nameCodeElement.value;
+            nameCodeElement.value = "";
+            stateForm['lastName'] = nameCodeElementLast.value;
+            nameCodeElementLast.value = '';
+            stateForm['PhoneNumber'] = inputt.value;
+            inputt.value = '';
+            document.getElementById('step-fifth').hidden = true;
+            document.getElementById('step-sixth').hidden = false;
+            console.log(stateForm);
+        } else {
+            firstLastError.innerText = 'the first name and last name field must not contain numbers.'
+            errorPhone.innerText = 'the phone number field must contain only numbers'
+        }
     })
     var secondElement = document.getElementById('popup');
-
     btnSixth.addEventListener('click', function () {
         stateForm = {}
         document.getElementById('step-sixth').hidden = true;
@@ -646,7 +723,6 @@ btnFourth.addEventListener('click', handleClick);
         secondElement.click()
     })
 })();
-
 (function () {
     var choisesCards = document.querySelectorAll('.choises__card');
     var myPopupText = document.querySelector('.popup__text')
@@ -655,25 +731,20 @@ btnFourth.addEventListener('click', handleClick);
     var popup = document.getElementById('popup');
     var myForm = document.getElementById('section-form');
     var myPopup = document.querySelector('.popup__content');
-
     choisesCards.forEach((card) => {
         card.addEventListener('click', (e) => {
-
             var imageTarget = e.currentTarget.querySelector('img');
             var clonedImage = imageTarget.cloneNode(true)
             myPopup.appendChild(myForm);
             myPopupText.removeChild(myPopupText.firstChild);
             myPopupText.appendChild(clonedImage);
-
             document.removeEventListener('click', outsidePopupClick);
-
             setTimeout(function () {
                 if (popup.getAttribute('aria-hidden') === 'true') {
                     console.log('Класс присутствует');
                     popupContent.addEventListener('click', function (event) {
                         event.stopPropagation();
                     });
-
                     document.addEventListener('click', outsidePopupClick);
                 } else {
                     console.log('Класс отсутствует');
@@ -697,22 +768,17 @@ btnFourth.addEventListener('click', handleClick);
                     document.getElementById('step-two-input-svg-to').hidden = true;
                 }
             },);
-
         }
         );
     }
     );
-
     function outsidePopupClick(event) {
         if (!popupContent.contains(event.target)) {
             console.log('Клик сделан вне блока .popup__content');
             sectionFormBlock.appendChild(myForm);
-
             document.removeEventListener('click', outsidePopupClick);
         }
     }
-
-
 }
 )();
 (function () {
@@ -726,7 +792,6 @@ btnFourth.addEventListener('click', handleClick);
     )
 }
 )()
-
 flatpickr("#pickerID", {
     dateFormat: "m/d/Y",
     showMonths: 2,
@@ -740,10 +805,8 @@ flatpickr("#pickerID", {
 (function () {
     var inputFromBlock = document.getElementById('step-two-input-from-block');
     var inputFrom = document.getElementById('step-two-input-from');
-
     var inputToBlock = document.getElementById('step-two-input-to-block');
     var inputTo = document.getElementById('step-two-input-to');
-
     if (inputFromBlock && inputFrom) {
         inputFromBlock.addEventListener('click', function () {
             inputFrom.focus();
@@ -753,33 +816,8 @@ flatpickr("#pickerID", {
         inputToBlock.addEventListener('click', function () {
             inputTo.focus();
         });
-
     } else {
         console.log('Не удалось найти элементы с указанными идентификаторами.');
     }
 }
 )()
-
-
-// (function () {
-//     var clozer = document.getElementById('clozer');
-//     clozer.addEventListener('click', function () {
-
-//         var sectionFormBlock = document.getElementById('section-form-block')
-//         var myForm = document.getElementById('section-form');
-
-//         document.getElementById('step-one').hidden=false;
-//         document.getElementById('step-two').hidden=true;
-//         document.getElementById('step-three').hidden=true;
-//         document.getElementById('step-fourth').hidden=true;
-//         document.getElementById('step-fifth').hidden=true;
-//         document.getElementById('step-sixth').hidden=true;
-//         sectionFormBlock.appendChild(myForm)
-//          document.getElementById('popup').click();
-
-//     })
-// }
-// )()
-
-
-
