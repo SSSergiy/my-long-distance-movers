@@ -25,15 +25,16 @@ body::after {
 	visibility: hidden;
 	pointer-events: none;
 	
-	@include adaptiveValue("padding-top",114 ,47 );
-	@include adaptiveValue("padding-bottom",114 ,47 );
+	@include adaptiveValue("padding-top",47 ,47 );
+	@include adaptiveValue("padding-bottom",80 ,47 );
 	@include adaptiveValue("padding-right",90 ,12 );
 	@include adaptiveValue("padding-left",90 ,12);
+	max-height:729px;
 }
 .popup_show {
 	z-index: 150;
 	visibility: visible;
-	overflow: auto;
+	// overflow: auto;
 	pointer-events: auto;
 	display:flex;
 	justify-content:center;
@@ -64,6 +65,7 @@ body::after {
 	max-width: 90vw;
 	border-radius: 10px;
 	position:relative;
+	
 	button{
 		position:absolute;
 		right:18px;

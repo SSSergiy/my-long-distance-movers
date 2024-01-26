@@ -47,7 +47,7 @@
         box-shadow: 4px 4px 12px 2px rgba(156, 170, 218, 0.30);
         @include adaptiveValue("padding-left", 185, 20);
         @include adaptiveValue("padding-right", 185, 20);
-        @include adaptiveValue("padding-top", 40, 20);
+        @include adaptiveValue("padding-top", 20, 20);
         @include adaptiveValue("padding-bottom", 40, 20);
 
     }
@@ -726,8 +726,8 @@
 }
 
 .popup__content {
-    padding: 40px;
-    @include adaptiveValue("padding", 40, 0);
+ 
+ 
 
 }
 
