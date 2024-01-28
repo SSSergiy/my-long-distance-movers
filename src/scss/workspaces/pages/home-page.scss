@@ -685,18 +685,18 @@
     @media (360px <=width <=767px) {
         & {
             width: 116% !important;
-            
+
 
         }
     }
       @media (445px <=width <=767px) {
         & {
             width: 100% !important;
-            
 
-      
+
+
 }}
-    
+
 }
 
 
@@ -771,6 +771,9 @@
         }
     }
 }
+#picker-block{
+width: 100%;
+height: 100%;}
 
 
 @import "../layout/about-us";

@@ -42,7 +42,8 @@
 .flatpickr-calendar.animate.open {
     -webkit-animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
     animation: fpFadeInDown 300ms cubic-bezier(.23, 1, .32, 1);
-        left: 50px;
+        left: 0px!important;
+    top: 101%!important;
 
 }
 
