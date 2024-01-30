@@ -47,7 +47,12 @@
 
 
         &::after {
-            content: url("./src/img/line.png");
+            content: "";
+            // content: url("./src/img/line.png");
+            background-image:url("./src/img/line.png");
+              background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             position: absolute;
             right: 2px;
             top: 21px;
@@ -55,17 +60,24 @@
             display: grid;
             place-items: center;
             transform: translateY(-50%);
-            padding-bottom: 15px;
+            // padding-bottom: 15px;
             position: absolute;
             transition: transform 0.5s ease 0s;
+             height: 40px;
+            width: 40px;
         }
 
         &::before {
-            content: url("./src/img/line.png");
+             content: "";
+            // content: url("./src/img/line.png");
             position: absolute;
             right: 0;
             top: 1px;
+            background-image:url("./src/img/line.png");
             background-color: #E6F1FE;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
             height: 40px;
             width: 40px;
             border-radius: 10px;
@@ -85,15 +97,15 @@
         &._spoller-active {
             &::before {
               
-                transform: translate(0%, -15%) rotate(0deg);
+                transform: translate(0%, 0%) rotate(0deg);
             }
 
             &::after {
-                transform: translateX(10%) translateY(-54%) rotate(0deg);
+                transform: translateX(0%) translateY(-50%) rotate(0deg);
 
                 @media (767px <=width <=1440px) {
                     & {
-                        transform: translateX(5%) translateY(-54%) rotate(0deg);
+                        transform: translateX(0%) translateY(-50%) rotate(0deg);
                     }
 
 
@@ -101,7 +113,7 @@
 
                 @media (360px <=width <=767px) {
                     & {
-                        transform: translateX(0%) translateY(-54%) rotate(-360deg);
+                        transform: translateX(0%) translateY(-50%) rotate(-360deg);
                     }
 
 
