@@ -1,4 +1,4 @@
-import validator from 'validator';
+
 
 /*
 (i) Код потрапляє у підсумковий файл,
@@ -320,7 +320,7 @@ function handleAriaHiddenChange(mutationsList, observer) {
     }
 }
 
-(function() {
+(function () {
     const popupElement = document.getElementById('popup');
 
     if (popupElement) {
@@ -574,9 +574,9 @@ document.getElementById('step-three-btn').addEventListener('click', () => {
         console.log(stateForm);
     }
 })
+
 function isValidEmail(email) {
-    // var emailRegex = /^((([0-9A-Za-z]{1}[-0-9A-z\.]{0,30}[0-9A-Za-z]?)|([0-9А-Яа-я]{1}[-0-9А-я\.]{0,30}[0-9А-Яа-я]?))@([-A-Za-z]{1,}\.){1,}[-A-Za-z]{2,})$/gi;
-    // return emailRegex.test(email);
+
     const tester = /^[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~](\.?[-!#$%&'*+\/0-9=?A-Z^_a-z`{|}~])*@[a-zA-Z0-9](-*\.?[a-zA-Z0-9])*\.[a-zA-Z](-?[a-zA-Z0-9])+$/;
 
     if (!email) return false;
@@ -584,34 +584,51 @@ function isValidEmail(email) {
     const [account, address] = email.split('@');
 
     if (!account || !address) return false;
-    if (account.length > 64 || address.length > 255) return false;
+    if (account.length > 50 || address.length > 60) return false;
 
     const domainParts = address.split('.');
-    if (domainParts.some(part => part.length > 63)) return false;
+
+
+    // Проверка длины первой части домена
+    const firstDomainPart = domainParts[0];
+    if (firstDomainPart.length > 50) return false;
+
+    // Проверка длины второй части домена
+    const secondDomainPart = domainParts[1];
+    if (secondDomainPart && secondDomainPart.length > 10) return false;
+
+    // if (domainParts.some(part => part.length > 10)) return false;
 
     return tester.test(email);
 }
 var mailCodeElement = document.getElementById('mail-code');
 var btnFourth = document.getElementById('step-fourth-btn');
 
-// var valueOld =''
+
 mailCodeElement.addEventListener('input', function (e) {
     var errorMessage = document.getElementById('step-fourth-input-to-error');
     btnFourth.classList.remove('valid-btn');
     btnFourth.classList.add('invalid-btn');
+
+    var sanitizedEmail = mailCodeElement.value.replace(/[^a-zA-Z0-9_.@-]/g, '');
+    var atSymbolCount = (sanitizedEmail.match(/@/g) || []).length;
+    if (atSymbolCount > 1) {
+        sanitizedEmail = sanitizedEmail.slice(0, -1);
+    }
+    mailCodeElement.value = sanitizedEmail;
+
     var inputValue = mailCodeElement.value;
-    // if(!isValidEmail(inputValue)) console.log("----------"), inputValue = valueOld;
-    console.log(validator.isEmail(mailCodeElement.value))
-    console.log(mailCodeElement.value)
+
+
+
+
     if (isValidEmail(inputValue)) {
-        // valueOld = inputValue;
         btnFourth.classList.remove('invalid-btn');
         btnFourth.classList.add('valid-btn');
         document.getElementById('step-fourth-input-to-error').hidden = true;
         errorMessage.innerHTML = 'Please enter a valid email address.'
         mailCodeElement.classList.remove('error-block');
     } else if (inputValue === '') {
-        // valueOld = inputValue;
         errorMessage.hidden = false;
         errorMessage.innerHTML = "the email field must not be empty"
         mailCodeElement.classList.add('error-block');
@@ -622,6 +639,7 @@ mailCodeElement.addEventListener('input', function (e) {
         errorMessage.hidden = false;
         mailCodeElement.classList.add('error-block');
     }
+    return sanitizedEmail
 });
 function handleClick() {
     var inputMail = document.getElementById('mail-code');
