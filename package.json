@@ -49,7 +49,6 @@
         "isotope-layout": "^3.0.6",
         "js-beautify": "^1.14.11",
         "rollup-pluginutils": "^2.8.2",
-        "simplebar": "latest",
-        "validator": "^13.11.0"
+        "simplebar": "latest"
     }
 }
