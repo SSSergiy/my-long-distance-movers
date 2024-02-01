@@ -70,6 +70,9 @@ body::after {
 		position:absolute;
 		right:18px;
 		top:18px;
+		&:focus{
+			outline-color:transparent;
+		}
 	}
 	.lock & {
 		visibility: visible;

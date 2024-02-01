@@ -102,7 +102,7 @@ class Popup {
         this.options.init ? this.initPopups() : null
     }
     initPopups() {
-        this.popupLogging(`Прокинувся`);
+        this.popupLogging(`woke up`);
         this.eventsPopup();
     }
     eventsPopup() {
@@ -257,9 +257,9 @@ class Popup {
                         popup: this
                     }
                 }));
-                this.popupLogging(`Відкрив попап`);
+                this.popupLogging(`opened popap`);
 
-            } else this.popupLogging(`Йой, такого попапу немає. Перевірте коректність введення. `);
+            } else this.popupLogging(`there is no such father, please check the correctness of the input`);
         }
     }
     close(selectorValue) {
@@ -311,7 +311,7 @@ class Popup {
             this._focusTrap();
         }, 50);
 
-        this.popupLogging(`Закрив попап`);
+        this.popupLogging(`the popup closed`);
     }
     // Отримання хешу
     _getHash() {
@@ -364,7 +364,7 @@ class Popup {
     }
     // Функція виведення в консоль
     popupLogging(message) {
-        this.options.logging ? FLS(`[Попапос]: ${message}`) : null;
+        this.options.logging ? FLS(`[popup]: ${message}`) : null;
     }
 }
 // Запускаємо та додаємо в об'єкт модулів
